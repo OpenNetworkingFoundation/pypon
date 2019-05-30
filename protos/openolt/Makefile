@@ -16,7 +16,7 @@
 
 # Makefile to build all protobuf and gRPC related artifacts
 
-ifeq ($(VOLTHA_BASE)_set,_set)
+ifeq ($(OPENOLT_BASE)_set,_set)
   $(error To get started, please source the env.sh file from Voltha top level directory)
 endif
 
@@ -36,7 +36,7 @@ protos: $(PROTO_PB2_FILES)
 	@echo "Building protocol buffer artifacts from $<"
 	env LD_LIBRARY_PATH=$(PROTOC_LIBDIR) python -m grpc.tools.protoc \
 	    -I. \
-	    -I$(VOLTHA_BASE)/protos/third_party \
+	    -I$(OPENOLT_BASE)/protos/third_party \
 	    --python_out=. \
 	    --grpc_python_out=. \
 	    --descriptor_set_out=$(basename $<).desc \

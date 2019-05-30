@@ -16,11 +16,11 @@
 
 # Makefile to build all protobuf and gRPC related artifacts
 
-ifeq ($(VOLTHA_BASE)_set,_set)
+ifeq ($(OPENOLT_BASE)_set,_set)
   $(error To get started, please source the env.sh file from Voltha top level directory)
 endif
 
-default: openolt third_party build
+default: third_party openolt build
 
 PROTO_FILES := $(wildcard *.proto)
 PROTO_GOOGLE_API := $(wildcard third_party/google/api/*.proto)
@@ -81,7 +81,7 @@ clean:
 
 openolt:
 	@echo "Building OpenOlt Proto Files"
-	cd ../adapters/openolt/protos; make
+	make -C openolt
 
 $(PROTOC):
 	@echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -108,3 +108,5 @@ install-protoc: $(PROTOC)
 uninstall-protoc:
 	cd $(PROTOC_BUILD_TMP_DIR)/$(PROTOC_DIR); \
 	    sudo make uninstall
+
+.PHONY: openolt

@@ -22,12 +22,12 @@ source env.sh
 ## Connect to OLT and publish events to Kafka
 ### Fetch openolt indications from the device and publish to Kafka
 ```shell
-python southbound/grpc/main.py localhost:9092 10.90.0.122:9191
+python openolt/sb_grpc.py localhost:9092 10.90.0.114:9191
 ```
 
 
 ### Read openolt indications from kafka
 ```shell
 
-./utils/confluent-kafka/consumer.py localhost:9092 foo openolt.ind-10.90.0.122
+confluent-kafka/consumer.py localhost:9092 foo openolt.ind-10.90.0.114
 ```

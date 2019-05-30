@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # sourcing this file is needed to make local development and integration testing work
-export VOLTHA_BASE=$PWD
+export OPENOLT_BASE=$PWD
 
 # load local python virtualenv if exists, otherwise create it
 VENVDIR="venv-$(uname -s | tr '[:upper:]' '[:lower:]')"
@@ -25,8 +25,5 @@ if [ ! -e "$VENVDIR/.built" ]; then
 fi
 . $VENVDIR/bin/activate
 
-# add top-level voltha dir to pythonpath
-export PYTHONPATH=$VOLTHA_BASE/$VENVDIR/lib/python2.7/site-packages:$PYTHONPATH:$VOLTHA_BASE:$VOLTHA_BASE/protos/third_party
-
-# assign DOCKER_HOST_IP to be the main ip address of this host
-export DOCKER_HOST_IP=$(python common/utils/nethelpers.py)
+# add top-level dir to pythonpath
+export PYTHONPATH=$OPENOLT_BASE/$VENVDIR/lib/python2.7/site-packages:$PYTHONPATH:$OPENOLT_BASE:$OPENOLT_BASE/protos/third_party
