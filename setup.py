@@ -25,7 +25,7 @@ def read(fname):
 
 setup(
     name='openolt',
-    version='1.6.1',
+    version='1.6.1.2',
     description=('White box PON OLT software'),
     author='Shad Ansari',
     author_email='shad69@gmail.com',
@@ -36,10 +36,11 @@ setup(
               'protos.third_party.google.api',
               'openolt'],
     long_description=read('README.md'),
+    long_description_content_type='text/markdown',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Topic :: System :: Networking',
         'Programming Language :: Python',
-        'License :: OSI Approved :: Apache License 2.0',
+        'License :: OSI Approved :: Apache Software License',
     ],
 )

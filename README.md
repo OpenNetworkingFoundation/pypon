@@ -6,7 +6,7 @@ TODO - Add help and links to Confluent docs
 
 ## Install openolt
 ### Get the code
-```shell
+```
 git clone git@github.com:shadansari/openolt.git
 ```
 
@@ -14,7 +14,7 @@ git clone git@github.com:shadansari/openolt.git
 
 All commands needs to run in a virtual env with PYTHONPATH set.
 
-```shell
+```
 cd openolt
 pipenv shell
 export PYTHONPATH=$PYTHONPATH:$PWD:$PWD/protos/third_party
@@ -22,13 +22,11 @@ export PYTHONPATH=$PYTHONPATH:$PWD:$PWD/protos/third_party
 
 ## Connect to OLT and publish events to Kafka
 ### Fetch openolt indications from the device and publish to Kafka
-```shell
+```
 python openolt/sb_grpc.py localhost:9092 10.90.0.114:9191
 ```
 
-
 ### Read openolt indications from kafka
-```shell
-
+```
 confluent-kafka/consumer.py localhost:9092 foo openolt.ind-10.90.0.114
 ```
