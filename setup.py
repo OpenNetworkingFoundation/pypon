@@ -24,7 +24,7 @@ def read(fname):
 
 
 setup(
-    name='olt-ctl',
+    name='openolt',
     version='1.6.1',
     description=('White box PON OLT software'),
     author='Shad Ansari',

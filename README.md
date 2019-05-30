@@ -1,13 +1,13 @@
-# olt-ctl quickstart 
-olt-ctl is a collection of programs for managing Optical Line Terminals (OLTs) that support the VOLTHA project's Openolt api.
+# openolt quickstart 
+openolt is a collection of programs for managing Optical Line Terminals (OLTs) that support the VOLTHA project's Openolt api.
 
 ## Install and start Confluent Kafka
 TODO - Add help and links to Confluent docs
 
-## Install olt-ctl
+## Install openolt
 ### Get the code
 ```shell
-git clone git@github.com:shadansari/olt-ctl.git
+git clone git@github.com:shadansari/openolt.git
 ```
 
 ### Create the virtual env
@@ -15,7 +15,7 @@ git clone git@github.com:shadansari/olt-ctl.git
 All commands needs to run in a virtual env with PYTHONPATH set.
 
 ```shell
-cd olt-ctl
+cd openolt
 pipenv shell
 export PYTHONPATH=$PYTHONPATH:$PWD:$PWD/protos/third_party
 ```
