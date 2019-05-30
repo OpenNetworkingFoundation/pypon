@@ -14,31 +14,14 @@
 # limitations under the License.
 #
 
-ifeq ($(OPENOLT_BASE)_set,_set)
-$(error To get started, please source the env.sh file)
-endif
-
-ifeq ($(TAG),)
-TAG := latest
-endif
-
-ifeq ($(TARGET_TAG),)
-TARGET_TAG := latest
-endif
-
-VENVDIR := venv-$(shell uname -s | tr '[:upper:]' '[:lower:]')
-
 # This should to be the first and default target in this Makefile
 help:
 	@echo "Usage: make [<target>]"
 	@echo "where available targets are:"
 	@echo
-	@echo "clean        : Remove files created by the build and tests"
-	@echo "distclean    : Remove venv directory"
-	@echo "help         : Print this help"
 	@echo "protos       : Compile all grpc/protobuf files"
-	@echo "rebuild-venv : Rebuild local Python virtualenv from scratch"
-	@echo "venv         : Build local Python virtualenv if did not exist yet"
+	@echo "clean        : Remove files created by the build and tests"
+	@echo "help         : Print this help"
 	@echo
 
 protos:
@@ -49,32 +32,5 @@ install-protoc:
 
 clean:
 	find . -name '*.pyc' | xargs rm -f
-
-distclean: clean
-	rm -rf ${VENVDIR}
-
-purge-venv:
-	rm -fr ${VENVDIR}
-
-rebuild-venv: purge-venv venv
-
-venv: ${VENVDIR}/.built
-
-VENV_BIN ?= virtualenv
-VENV_OPTS ?=
-
-${VENVDIR}/.built:
-	@ $(VENV_BIN) ${VENV_OPTS} ${VENVDIR}
-	@ $(VENV_BIN) ${VENV_OPTS} --relocatable ${VENVDIR}
-	@ . ${VENVDIR}/bin/activate && \
-	    pip install --upgrade pip; \
-	    if ! pip install -r requirements.txt; \
-	    then \
-	        echo "On MAC OS X, if the installation failed with an error \n'<openssl/opensslv.h>': file not found,"; \
-	        echo "see the BUILD.md file for a workaround"; \
-	    else \
-	        uname -s > ${VENVDIR}/.built; \
-	    fi
-	@ $(VENV_BIN) ${VENV_OPTS} --relocatable ${VENVDIR}
 
 .PHONY: protos

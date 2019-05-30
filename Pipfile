@@ -1,0 +1,26 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+certifi = "*"
+chardet = "*"
+confluent-kafka = "*"
+enum34 = "*"
+futures = "*"
+grpc = "*"
+grpcio = "*"
+idna = "*"
+msgpack-python = "*"
+protobuf = "*"
+requests = "*"
+simplejson = "*"
+six = "*"
+structlog = "*"
+urllib3 = "*"
+
+[requires]
+python_version = "2.7"

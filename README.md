@@ -12,11 +12,12 @@ git clone git@github.com:shadansari/olt-ctl.git
 
 ### Create the virtual env
 
-All commands needs to run in a virtual env.
+All commands needs to run in a virtual env with PYTHONPATH set.
 
 ```shell
 cd olt-ctl
-source env.sh
+pipenv shell
+export PYTHONPATH=$PYTHONPATH:$PWD:$PWD/protos/third_party
 ```
 
 ## Connect to OLT and publish events to Kafka
