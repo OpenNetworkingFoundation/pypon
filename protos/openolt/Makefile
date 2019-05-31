@@ -36,7 +36,6 @@ protos: $(PROTO_PB2_FILES)
 	    -I../third_party \
 	    --python_out=../../openolt \
 	    --grpc_python_out=../../openolt \
-	    --include_imports \
 	    $<
 
 clean:

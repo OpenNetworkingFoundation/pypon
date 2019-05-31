@@ -49,7 +49,6 @@ google_api:
 	    -I. \
 	    --python_out=../../openolt \
 	    --grpc_python_out=../../openolt \
-	    --include_imports \
         google/api/annotations.proto google/api/http.proto
 
 build: $(PROTOC) $(PROTO_PB2_FILES)
@@ -61,7 +60,6 @@ build: $(PROTOC) $(PROTO_PB2_FILES)
 	    -I./third_party \
 	    --python_out=../../openolt \
 	    --grpc_python_out=../../openolt \
-	    --include_imports \
 	    $<
 
 clean:
