@@ -23,7 +23,8 @@ import structlog
 from simplejson import dumps
 from google.protobuf.json_format import MessageToJson
 
-from protos.openolt import openolt_pb2_grpc, openolt_pb2
+import openolt_pb2_grpc
+import openolt_pb2
 from confluent_kafka import Producer
 
 

@@ -16,11 +16,7 @@
 
 # Makefile to build all protobuf and gRPC related artifacts
 
-ifeq ($(OPENOLT_BASE)_set,_set)
-  $(error To get started, please source the env.sh file from Voltha top level directory)
-endif
-
-default: third_party openolt build
+default: third_party build
 
 PROTO_FILES := $(wildcard *.proto)
 PROTO_GOOGLE_API := $(wildcard third_party/google/api/*.proto)
@@ -51,11 +47,9 @@ google_api:
 	cd third_party ; \
 	env LD_LIBRARY_PATH=$(PROTOC_LIBDIR) python -m grpc.tools.protoc \
 	    -I. \
-	    --python_out=. \
-	    --grpc_python_out=. \
-	    --descriptor_set_out=google/api/annotations.desc \
+	    --python_out=../../openolt \
+	    --grpc_python_out=../../openolt \
 	    --include_imports \
-	    --include_source_info \
         google/api/annotations.proto google/api/http.proto
 
 build: $(PROTOC) $(PROTO_PB2_FILES)
@@ -65,11 +59,9 @@ build: $(PROTOC) $(PROTO_PB2_FILES)
 	env LD_LIBRARY_PATH=$(PROTOC_LIBDIR) python -m grpc.tools.protoc \
 	    -I. \
 	    -I./third_party \
-	    --python_out=. \
-	    --grpc_python_out=. \
-	    --descriptor_set_out=$(basename $<).desc \
+	    --python_out=../../openolt \
+	    --grpc_python_out=../../openolt \
 	    --include_imports \
-	    --include_source_info \
 	    $<
 
 clean:
@@ -78,10 +70,6 @@ clean:
 		$(PROTO_ALL_PB2_GPRC_FILES) \
 		$(PROTO_All_PB2_C_FILES) \
 		$(PROTO_PB2_GOOGLE_API)
-
-openolt:
-	@echo "Building OpenOlt Proto Files"
-	make -C openolt
 
 $(PROTOC):
 	@echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -108,5 +96,3 @@ install-protoc: $(PROTOC)
 uninstall-protoc:
 	cd $(PROTOC_BUILD_TMP_DIR)/$(PROTOC_DIR); \
 	    sudo make uninstall
-
-.PHONY: openolt

@@ -16,14 +16,11 @@
 
 # Makefile to build all protobuf and gRPC related artifacts
 
-ifeq ($(OPENOLT_BASE)_set,_set)
-  $(error To get started, please source the env.sh file from Voltha top level directory)
-endif
-
 default: build
 
 PROTO_FILES := $(wildcard *.proto)
 PROTO_PB2_FILES := $(foreach f,$(PROTO_FILES),$(subst .proto,_pb2.py,$(f)))
+PROTO_PB2_GPRC_FILES := $(foreach f,$(PROTO_FILES),$(subst .proto,_pb2_grpc.py,$(f)))
 PROTO_DESC_FILES := $(foreach f,$(PROTO_FILES),$(subst .proto,.desc,$(f)))
 
 PROTOC_LIBDIR := /usr/local/lib
@@ -36,13 +33,11 @@ protos: $(PROTO_PB2_FILES)
 	@echo "Building protocol buffer artifacts from $<"
 	env LD_LIBRARY_PATH=$(PROTOC_LIBDIR) python -m grpc.tools.protoc \
 	    -I. \
-	    -I$(OPENOLT_BASE)/protos/third_party \
-	    --python_out=. \
-	    --grpc_python_out=. \
-	    --descriptor_set_out=$(basename $<).desc \
+	    -I../third_party \
+	    --python_out=../../openolt \
+	    --grpc_python_out=../../openolt \
 	    --include_imports \
-	    --include_source_info \
 	    $<
 
 clean:
-	rm -f $(PROTO_PB2_FILES) $(PROTO_DESC_FILES)
+	rm -f $(PROTO_PB2_FILES) $(PROTO_PB2_GPRC_FILES) $(PROTO_DESC_FILES)

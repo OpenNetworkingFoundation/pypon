@@ -26,11 +26,17 @@ help:
 
 protos:
 	make -C protos
+	make -C protos/openolt
 
 install-protoc:
 	make -C protos install-protoc
 
 clean:
 	find . -name '*.pyc' | xargs rm -f
+
+
+protos-clean:
+	find openolt -name '*pb2.py' | xargs rm -f
+	find openolt -name '*pb2_grpc.py' | xargs rm -f
 
 .PHONY: protos
