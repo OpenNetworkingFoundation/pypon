@@ -14,7 +14,7 @@
 
 syntax = "proto3";
 package openolt;
-import "google/api/annotations.proto";
+import "annotations.proto";
 
 service Openolt {
 

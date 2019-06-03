@@ -26,7 +26,6 @@ help:
 
 protos:
 	make -C protos
-	make -C protos/openolt
 
 install-protoc:
 	make -C protos install-protoc

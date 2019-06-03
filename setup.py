@@ -25,7 +25,7 @@ def read(fname):
 
 setup(
     name='openolt',
-    version='1.6.1.23',
+    version='1.6.1.26',
     description=('White box PON OLT software'),
     author='Shad Ansari',
     author_email='shad69@gmail.com',
@@ -34,9 +34,8 @@ setup(
     url='https://github.com/shadansari',
     packages=[
         'openolt',
-        'openolt.google',
-        'openolt.google.api',
     ],
+    scripts=['bin/openolt'],
     install_requires=[
         'futures',
         'structlog',

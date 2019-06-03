@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ab8cade6f4b791d06cae39bcb0a4068e352f0a9e0fa8dde7f57e08fb3d3672a8"
+            "sha256": "20ba688559eed1b4534ef2a23e7f36af3f54ba611adc908b9062a6c560742bde"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -179,6 +179,9 @@
             ],
             "index": "pypi",
             "version": "==0.5.6"
+        },
+        "openolt": {
+            "path": "."
         },
         "protobuf": {
             "hashes": [

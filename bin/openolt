@@ -1,0 +1,6 @@
+#!/usr/bin/env python
+
+from openolt import sb_grpc_rx
+
+print "Hello, world!"
+sb_grpc_rx.SbGrpcRx("localhost:9092", "10.90.0.114:9191").start()

@@ -14,7 +14,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+import annotations_pb2 as annotations__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='openolt',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\ropenolt.proto\x12\x07openolt\x1a\x1cgoogle/api/annotations.proto\"\xe9\x03\n\nIndication\x12)\n\x07olt_ind\x18\x01 \x01(\x0b\x32\x16.openolt.OltIndicationH\x00\x12+\n\x08intf_ind\x18\x02 \x01(\x0b\x32\x17.openolt.IntfIndicationH\x00\x12\x34\n\rintf_oper_ind\x18\x03 \x01(\x0b\x32\x1b.openolt.IntfOperIndicationH\x00\x12\x32\n\x0conu_disc_ind\x18\x04 \x01(\x0b\x32\x1a.openolt.OnuDiscIndicationH\x00\x12)\n\x07onu_ind\x18\x05 \x01(\x0b\x32\x16.openolt.OnuIndicationH\x00\x12+\n\x08omci_ind\x18\x06 \x01(\x0b\x32\x17.openolt.OmciIndicationH\x00\x12,\n\x07pkt_ind\x18\x07 \x01(\x0b\x32\x19.openolt.PacketIndicationH\x00\x12-\n\nport_stats\x18\x08 \x01(\x0b\x32\x17.openolt.PortStatisticsH\x00\x12-\n\nflow_stats\x18\t \x01(\x0b\x32\x17.openolt.FlowStatisticsH\x00\x12-\n\talarm_ind\x18\n \x01(\x0b\x32\x18.openolt.AlarmIndicationH\x00\x42\x06\n\x04\x64\x61ta\"\xef\x05\n\x0f\x41larmIndication\x12)\n\x07los_ind\x18\x01 \x01(\x0b\x32\x16.openolt.LosIndicationH\x00\x12\x36\n\x0e\x64ying_gasp_ind\x18\x02 \x01(\x0b\x32\x1c.openolt.DyingGaspIndicationH\x00\x12\x34\n\ronu_alarm_ind\x18\x03 \x01(\x0b\x32\x1b.openolt.OnuAlarmIndicationH\x00\x12\x44\n\x14onu_startup_fail_ind\x18\x04 \x01(\x0b\x32$.openolt.OnuStartupFailureIndicationH\x00\x12\x45\n\x16onu_signal_degrade_ind\x18\x05 \x01(\x0b\x32#.openolt.OnuSignalDegradeIndicationH\x00\x12\x46\n\x17onu_drift_of_window_ind\x18\x06 \x01(\x0b\x32#.openolt.OnuDriftOfWindowIndicationH\x00\x12\x44\n\x11onu_loss_omci_ind\x18\x07 \x01(\x0b\x32\'.openolt.OnuLossOfOmciChannelIndicationH\x00\x12\x44\n\x14onu_signals_fail_ind\x18\x08 \x01(\x0b\x32$.openolt.OnuSignalsFailureIndicationH\x00\x12\x43\n\x0conu_tiwi_ind\x18\t \x01(\x0b\x32+.openolt.OnuTransmissionInterferenceWarningH\x00\x12J\n\x17onu_activation_fail_ind\x18\n \x01(\x0b\x32\'.openolt.OnuActivationFailureIndicationH\x00\x12I\n\x18onu_processing_error_ind\x18\x0b \x01(\x0b\x32%.openolt.OnuProcessingErrorIndicationH\x00\x42\x06\n\x04\x64\x61ta\"#\n\rOltIndication\x12\x12\n\noper_state\x18\x01 \x01(\t\"5\n\x0eIntfIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x12\n\noper_state\x18\x02 \x01(\t\"R\n\x11OnuDiscIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12,\n\rserial_number\x18\x02 \x01(\x0b\x32\x15.openolt.SerialNumber\"\x87\x01\n\rOnuIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x12\n\noper_state\x18\x03 \x01(\t\x12\x13\n\x0b\x61\x64min_state\x18\x05 \x01(\t\x12,\n\rserial_number\x18\x04 \x01(\x0b\x32\x15.openolt.SerialNumber\"G\n\x12IntfOperIndication\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0f\n\x07intf_id\x18\x02 \x01(\x07\x12\x12\n\noper_state\x18\x03 \x01(\t\">\n\x0eOmciIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0b\n\x03pkt\x18\x03 \x01(\x0c\"\x89\x01\n\x10PacketIndication\x12\x11\n\tintf_type\x18\x05 \x01(\t\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x12\n\ngemport_id\x18\x02 \x01(\x07\x12\x0f\n\x07\x66low_id\x18\x03 \x01(\x07\x12\x0f\n\x07port_no\x18\x06 \x01(\x07\x12\x0e\n\x06\x63ookie\x18\x07 \x01(\x06\x12\x0b\n\x03pkt\x18\x04 \x01(\x0c\"\x1c\n\tInterface\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\"(\n\tHeartbeat\x12\x1b\n\x13heartbeat_signature\x18\x01 \x01(\x07\"a\n\x03Onu\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12,\n\rserial_number\x18\x03 \x01(\x0b\x32\x15.openolt.SerialNumber\x12\x0b\n\x03pir\x18\x04 \x01(\x07\"7\n\x07OmciMsg\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0b\n\x03pkt\x18\x03 \x01(\x0c\"J\n\tOnuPacket\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0f\n\x07port_no\x18\x04 \x01(\x07\x12\x0b\n\x03pkt\x18\x03 \x01(\x0c\",\n\x0cUplinkPacket\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0b\n\x03pkt\x18\x02 \x01(\x0c\"\x88\x07\n\nDeviceInfo\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\r\n\x05model\x18\x02 \x01(\t\x12\x18\n\x10hardware_version\x18\x03 \x01(\t\x12\x18\n\x10\x66irmware_version\x18\x04 \x01(\t\x12\x11\n\tdevice_id\x18\x10 \x01(\t\x12\x1c\n\x14\x64\x65vice_serial_number\x18\x11 \x01(\t\x12\x11\n\tpon_ports\x18\x0c \x01(\x07\x12\x12\n\ntechnology\x18\x05 \x01(\t\x12\x14\n\x0conu_id_start\x18\x06 \x01(\x07\x12\x12\n\nonu_id_end\x18\x07 \x01(\x07\x12\x16\n\x0e\x61lloc_id_start\x18\x08 \x01(\x07\x12\x14\n\x0c\x61lloc_id_end\x18\t \x01(\x07\x12\x18\n\x10gemport_id_start\x18\n \x01(\x07\x12\x16\n\x0egemport_id_end\x18\x0b \x01(\x07\x12\x15\n\rflow_id_start\x18\r \x01(\x07\x12\x13\n\x0b\x66low_id_end\x18\x0e \x01(\x07\x12\x38\n\x06ranges\x18\x0f \x03(\x0b\x32(.openolt.DeviceInfo.DeviceResourceRanges\x1a\xde\x03\n\x14\x44\x65viceResourceRanges\x12\x10\n\x08intf_ids\x18\x01 \x03(\x07\x12\x12\n\ntechnology\x18\x02 \x01(\t\x12<\n\x05pools\x18\x03 \x03(\x0b\x32-.openolt.DeviceInfo.DeviceResourceRanges.Pool\x1a\xe1\x02\n\x04Pool\x12\x44\n\x04type\x18\x01 \x01(\x0e\x32\x36.openolt.DeviceInfo.DeviceResourceRanges.Pool.PoolType\x12J\n\x07sharing\x18\x02 \x01(\x0e\x32\x39.openolt.DeviceInfo.DeviceResourceRanges.Pool.SharingType\x12\r\n\x05start\x18\x03 \x01(\x07\x12\x0b\n\x03\x65nd\x18\x04 \x01(\x07\"A\n\x08PoolType\x12\n\n\x06ONU_ID\x10\x00\x12\x0c\n\x08\x41LLOC_ID\x10\x01\x12\x0e\n\nGEMPORT_ID\x10\x02\x12\x0b\n\x07\x46LOW_ID\x10\x03\"h\n\x0bSharingType\x12\x16\n\x12\x44\x45\x44ICATED_PER_INTF\x10\x00\x12\x1f\n\x1bSHARED_BY_ALL_INTF_ALL_TECH\x10\x01\x12 \n\x1cSHARED_BY_ALL_INTF_SAME_TECH\x10\x02\"\x8c\x02\n\nClassifier\x12\x0e\n\x06o_tpid\x18\x01 \x01(\x07\x12\r\n\x05o_vid\x18\x02 \x01(\x07\x12\x0e\n\x06i_tpid\x18\x03 \x01(\x07\x12\r\n\x05i_vid\x18\x04 \x01(\x07\x12\x0f\n\x07o_pbits\x18\x05 \x01(\x07\x12\x0f\n\x07i_pbits\x18\x06 \x01(\x07\x12\x10\n\x08\x65th_type\x18\x07 \x01(\x07\x12\x0f\n\x07\x64st_mac\x18\x08 \x01(\x0c\x12\x0f\n\x07src_mac\x18\t \x01(\x0c\x12\x10\n\x08ip_proto\x18\n \x01(\x07\x12\x0e\n\x06\x64st_ip\x18\x0b \x01(\x07\x12\x0e\n\x06src_ip\x18\x0c \x01(\x07\x12\x10\n\x08src_port\x18\r \x01(\x07\x12\x10\n\x08\x64st_port\x18\x0e \x01(\x07\x12\x14\n\x0cpkt_tag_type\x18\x0f \x01(\t\"R\n\tActionCmd\x12\x15\n\radd_outer_tag\x18\x01 \x01(\x08\x12\x18\n\x10remove_outer_tag\x18\x02 \x01(\x08\x12\x14\n\x0ctrap_to_host\x18\x03 \x01(\x08\"\x89\x01\n\x06\x41\x63tion\x12\x1f\n\x03\x63md\x18\x01 \x01(\x0b\x32\x12.openolt.ActionCmd\x12\r\n\x05o_vid\x18\x02 \x01(\x07\x12\x0f\n\x07o_pbits\x18\x03 \x01(\x07\x12\x0e\n\x06o_tpid\x18\x04 \x01(\x07\x12\r\n\x05i_vid\x18\x05 \x01(\x07\x12\x0f\n\x07i_pbits\x18\x06 \x01(\x07\x12\x0e\n\x06i_tpid\x18\x07 \x01(\x07\"\x9e\x02\n\x04\x46low\x12\x16\n\x0e\x61\x63\x63\x65ss_intf_id\x18\x01 \x01(\x0f\x12\x0e\n\x06onu_id\x18\x02 \x01(\x0f\x12\x0e\n\x06uni_id\x18\x0b \x01(\x0f\x12\x0f\n\x07\x66low_id\x18\x03 \x01(\x07\x12\x11\n\tflow_type\x18\x04 \x01(\t\x12\x10\n\x08\x61lloc_id\x18\n \x01(\x0f\x12\x17\n\x0fnetwork_intf_id\x18\x05 \x01(\x0f\x12\x12\n\ngemport_id\x18\x06 \x01(\x0f\x12\'\n\nclassifier\x18\x07 \x01(\x0b\x32\x13.openolt.Classifier\x12\x1f\n\x06\x61\x63tion\x18\x08 \x01(\x0b\x32\x0f.openolt.Action\x12\x10\n\x08priority\x18\t \x01(\x0f\x12\x0e\n\x06\x63ookie\x18\x0c \x01(\x06\x12\x0f\n\x07port_no\x18\r \x01(\x07\":\n\x0cSerialNumber\x12\x11\n\tvendor_id\x18\x01 \x01(\x0c\x12\x17\n\x0fvendor_specific\x18\x02 \x01(\x0c\"\xfb\x02\n\x0ePortStatistics\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x10\n\x08rx_bytes\x18\x02 \x01(\x06\x12\x12\n\nrx_packets\x18\x03 \x01(\x06\x12\x18\n\x10rx_ucast_packets\x18\x04 \x01(\x06\x12\x18\n\x10rx_mcast_packets\x18\x05 \x01(\x06\x12\x18\n\x10rx_bcast_packets\x18\x06 \x01(\x06\x12\x18\n\x10rx_error_packets\x18\x07 \x01(\x06\x12\x10\n\x08tx_bytes\x18\x08 \x01(\x06\x12\x12\n\ntx_packets\x18\t \x01(\x06\x12\x18\n\x10tx_ucast_packets\x18\n \x01(\x06\x12\x18\n\x10tx_mcast_packets\x18\x0b \x01(\x06\x12\x18\n\x10tx_bcast_packets\x18\x0c \x01(\x06\x12\x18\n\x10tx_error_packets\x18\r \x01(\x06\x12\x15\n\rrx_crc_errors\x18\x0e \x01(\x06\x12\x12\n\nbip_errors\x18\x0f \x01(\x06\x12\x11\n\ttimestamp\x18\x10 \x01(\x07\"\x80\x01\n\x0e\x46lowStatistics\x12\x0f\n\x07\x66low_id\x18\x01 \x01(\x07\x12\x10\n\x08rx_bytes\x18\x02 \x01(\x06\x12\x12\n\nrx_packets\x18\x03 \x01(\x06\x12\x10\n\x08tx_bytes\x18\x08 \x01(\x06\x12\x12\n\ntx_packets\x18\t \x01(\x06\x12\x11\n\ttimestamp\x18\x10 \x01(\x07\"0\n\rLosIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06status\x18\x02 \x01(\t\"F\n\x13\x44yingGaspIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0e\n\x06status\x18\x03 \x01(\t\"\x96\x01\n\x12OnuAlarmIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x12\n\nlos_status\x18\x03 \x01(\t\x12\x12\n\nlob_status\x18\x04 \x01(\t\x12\x18\n\x10lopc_miss_status\x18\x05 \x01(\t\x12\x1d\n\x15lopc_mic_error_status\x18\x06 \x01(\t\"N\n\x1bOnuStartupFailureIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0e\n\x06status\x18\x03 \x01(\t\"m\n\x1aOnuSignalDegradeIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x1e\n\x16inverse_bit_error_rate\x18\x04 \x01(\x07\"m\n\x1aOnuDriftOfWindowIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\r\n\x05\x64rift\x18\x04 \x01(\x07\x12\x0f\n\x07new_eqd\x18\x05 \x01(\x07\"Q\n\x1eOnuLossOfOmciChannelIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0e\n\x06status\x18\x03 \x01(\t\"n\n\x1bOnuSignalsFailureIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x1e\n\x16inverse_bit_error_rate\x18\x04 \x01(\x07\"d\n\"OnuTransmissionInterferenceWarning\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\r\n\x05\x64rift\x18\x04 \x01(\x07\"A\n\x1eOnuActivationFailureIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\"?\n\x1cOnuProcessingErrorIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\"\xb3\x01\n\tScheduler\x12%\n\tdirection\x18\x01 \x01(\x0e\x32\x12.openolt.Direction\x12,\n\radditional_bw\x18\x02 \x01(\x0e\x32\x15.openolt.AdditionalBW\x12\x10\n\x08priority\x18\x03 \x01(\x07\x12\x0e\n\x06weight\x18\x04 \x01(\x07\x12/\n\x0csched_policy\x18\x05 \x01(\x0e\x32\x19.openolt.SchedulingPolicy\"\x90\x01\n\x12TrafficShapingInfo\x12\x0b\n\x03\x63ir\x18\x01 \x01(\x07\x12\x0b\n\x03\x63\x62s\x18\x02 \x01(\x07\x12\x0b\n\x03pir\x18\x03 \x01(\x07\x12\x0b\n\x03pbs\x18\x04 \x01(\x07\x12\x0b\n\x03gir\x18\x05 \x01(\x07\x12\x39\n\nadd_bw_ind\x18\x06 \x01(\x0e\x32%.openolt.InferredAdditionBWIndication\"\xa2\x01\n\x05Tcont\x12%\n\tdirection\x18\x01 \x01(\x0e\x32\x12.openolt.Direction\x12\x10\n\x08\x61lloc_id\x18\x02 \x01(\x07\x12%\n\tscheduler\x18\x03 \x01(\x0b\x32\x12.openolt.Scheduler\x12\x39\n\x14traffic_shaping_info\x18\x04 \x01(\x0b\x32\x1b.openolt.TrafficShapingInfo\"j\n\x06Tconts\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0e\n\x06uni_id\x18\x04 \x01(\x07\x12\x0f\n\x07port_no\x18\x05 \x01(\x07\x12\x1e\n\x06tconts\x18\x03 \x03(\x0b\x32\x0e.openolt.Tcont\"+\n\x15TailDropDiscardConfig\x12\x12\n\nqueue_size\x18\x01 \x01(\x07\"Y\n\x10RedDiscardConfig\x12\x15\n\rmin_threshold\x18\x01 \x01(\x07\x12\x15\n\rmax_threshold\x18\x02 \x01(\x07\x12\x17\n\x0fmax_probability\x18\x03 \x01(\x07\"\x90\x01\n\x11WRedDiscardConfig\x12(\n\x05green\x18\x01 \x01(\x0b\x32\x19.openolt.RedDiscardConfig\x12)\n\x06yellow\x18\x02 \x01(\x0b\x32\x19.openolt.RedDiscardConfig\x12&\n\x03red\x18\x03 \x01(\x0b\x32\x19.openolt.RedDiscardConfig\"\x89\x02\n\rDiscardConfig\x12.\n\x0e\x64iscard_policy\x18\x01 \x01(\x0e\x32\x16.openolt.DiscardPolicy\x12\x42\n\x18tail_drop_discard_config\x18\x02 \x01(\x0b\x32\x1e.openolt.TailDropDiscardConfigH\x00\x12\x37\n\x12red_discard_config\x18\x03 \x01(\x0b\x32\x19.openolt.RedDiscardConfigH\x00\x12\x39\n\x13wred_discard_config\x18\x04 \x01(\x0b\x32\x1a.openolt.WRedDiscardConfigH\x00\x42\x10\n\x0e\x64iscard_config\"\x07\n\x05\x45mpty*<\n\tDirection\x12\x0c\n\x08UPSTREAM\x10\x00\x12\x0e\n\nDOWNSTREAM\x10\x01\x12\x11\n\rBIDIRECTIONAL\x10\x02*;\n\x10SchedulingPolicy\x12\x07\n\x03WRR\x10\x00\x12\x12\n\x0eStrictPriority\x10\x01\x12\n\n\x06Hybrid\x10\x02*n\n\x0c\x41\x64\x64itionalBW\x12\x15\n\x11\x41\x64\x64itionalBW_None\x10\x00\x12\x13\n\x0f\x41\x64\x64itionalBW_NA\x10\x01\x12\x1b\n\x17\x41\x64\x64itionalBW_BestEffort\x10\x02\x12\x15\n\x11\x41\x64\x64itionalBW_Auto\x10\x03*?\n\rDiscardPolicy\x12\x0c\n\x08TailDrop\x10\x00\x12\r\n\tWTailDrop\x10\x01\x12\x07\n\x03Red\x10\x02\x12\x08\n\x04WRed\x10\x03*\x9c\x01\n\x1cInferredAdditionBWIndication\x12%\n!InferredAdditionBWIndication_None\x10\x00\x12(\n$InferredAdditionBWIndication_Assured\x10\x01\x12+\n\'InferredAdditionBWIndication_BestEffort\x10\x02\x32\xa7\x0b\n\x07Openolt\x12\x44\n\nDisableOlt\x12\x0e.openolt.Empty\x1a\x0e.openolt.Empty\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/Disable:\x01*\x12\x46\n\x0bReenableOlt\x12\x0e.openolt.Empty\x1a\x0e.openolt.Empty\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/Reenable:\x01*\x12\x45\n\x0b\x41\x63tivateOnu\x12\x0c.openolt.Onu\x1a\x0e.openolt.Empty\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/v1/EnableOnu:\x01*\x12H\n\rDeactivateOnu\x12\x0c.openolt.Onu\x1a\x0e.openolt.Empty\"\x19\x82\xd3\xe4\x93\x02\x13\"\x0e/v1/DisableOnu:\x01*\x12\x43\n\tDeleteOnu\x12\x0c.openolt.Onu\x1a\x0e.openolt.Empty\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/v1/DeleteOnu:\x01*\x12I\n\nOmciMsgOut\x12\x10.openolt.OmciMsg\x1a\x0e.openolt.Empty\"\x19\x82\xd3\xe4\x93\x02\x13\"\x0e/v1/OmciMsgOut:\x01*\x12O\n\x0cOnuPacketOut\x12\x12.openolt.OnuPacket\x1a\x0e.openolt.Empty\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v1/OnuPacketOut:\x01*\x12X\n\x0fUplinkPacketOut\x12\x15.openolt.UplinkPacket\x1a\x0e.openolt.Empty\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/v1/UplinkPacketOut:\x01*\x12@\n\x07\x46lowAdd\x12\r.openolt.Flow\x1a\x0e.openolt.Empty\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/FlowAdd:\x01*\x12\x46\n\nFlowRemove\x12\r.openolt.Flow\x1a\x0e.openolt.Empty\"\x19\x82\xd3\xe4\x93\x02\x13\"\x0e/v1/FlowRemove:\x01*\x12S\n\x0eHeartbeatCheck\x12\x0e.openolt.Empty\x1a\x12.openolt.Heartbeat\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/HeartbeatCheck:\x01*\x12M\n\x0b\x45nablePonIf\x12\x12.openolt.Interface\x1a\x0e.openolt.Empty\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/EnablePonIf:\x01*\x12O\n\x0c\x44isablePonIf\x12\x12.openolt.Interface\x1a\x0e.openolt.Empty\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v1/DisablePonIf:\x01*\x12R\n\rGetDeviceInfo\x12\x0e.openolt.Empty\x1a\x13.openolt.DeviceInfo\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/GetDeviceInfo:\x01*\x12?\n\x06Reboot\x12\x0e.openolt.Empty\x1a\x0e.openolt.Empty\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/v1/Reboot:\x01*\x12U\n\x11\x43ollectStatistics\x12\x0e.openolt.Empty\x1a\x0e.openolt.Empty\" \x82\xd3\xe4\x93\x02\x1a\"\x15/v1/CollectStatistics:\x01*\x12L\n\x0c\x43reateTconts\x12\x0f.openolt.Tconts\x1a\x0e.openolt.Empty\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v1/CreateTconts:\x01*\x12L\n\x0cRemoveTconts\x12\x0f.openolt.Tconts\x1a\x0e.openolt.Empty\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v1/RemoveTconts:\x01*\x12;\n\x10\x45nableIndication\x12\x0e.openolt.Empty\x1a\x13.openolt.Indication\"\x00\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\ropenolt.proto\x12\x07openolt\x1a\x11\x61nnotations.proto\"\xe9\x03\n\nIndication\x12)\n\x07olt_ind\x18\x01 \x01(\x0b\x32\x16.openolt.OltIndicationH\x00\x12+\n\x08intf_ind\x18\x02 \x01(\x0b\x32\x17.openolt.IntfIndicationH\x00\x12\x34\n\rintf_oper_ind\x18\x03 \x01(\x0b\x32\x1b.openolt.IntfOperIndicationH\x00\x12\x32\n\x0conu_disc_ind\x18\x04 \x01(\x0b\x32\x1a.openolt.OnuDiscIndicationH\x00\x12)\n\x07onu_ind\x18\x05 \x01(\x0b\x32\x16.openolt.OnuIndicationH\x00\x12+\n\x08omci_ind\x18\x06 \x01(\x0b\x32\x17.openolt.OmciIndicationH\x00\x12,\n\x07pkt_ind\x18\x07 \x01(\x0b\x32\x19.openolt.PacketIndicationH\x00\x12-\n\nport_stats\x18\x08 \x01(\x0b\x32\x17.openolt.PortStatisticsH\x00\x12-\n\nflow_stats\x18\t \x01(\x0b\x32\x17.openolt.FlowStatisticsH\x00\x12-\n\talarm_ind\x18\n \x01(\x0b\x32\x18.openolt.AlarmIndicationH\x00\x42\x06\n\x04\x64\x61ta\"\xef\x05\n\x0f\x41larmIndication\x12)\n\x07los_ind\x18\x01 \x01(\x0b\x32\x16.openolt.LosIndicationH\x00\x12\x36\n\x0e\x64ying_gasp_ind\x18\x02 \x01(\x0b\x32\x1c.openolt.DyingGaspIndicationH\x00\x12\x34\n\ronu_alarm_ind\x18\x03 \x01(\x0b\x32\x1b.openolt.OnuAlarmIndicationH\x00\x12\x44\n\x14onu_startup_fail_ind\x18\x04 \x01(\x0b\x32$.openolt.OnuStartupFailureIndicationH\x00\x12\x45\n\x16onu_signal_degrade_ind\x18\x05 \x01(\x0b\x32#.openolt.OnuSignalDegradeIndicationH\x00\x12\x46\n\x17onu_drift_of_window_ind\x18\x06 \x01(\x0b\x32#.openolt.OnuDriftOfWindowIndicationH\x00\x12\x44\n\x11onu_loss_omci_ind\x18\x07 \x01(\x0b\x32\'.openolt.OnuLossOfOmciChannelIndicationH\x00\x12\x44\n\x14onu_signals_fail_ind\x18\x08 \x01(\x0b\x32$.openolt.OnuSignalsFailureIndicationH\x00\x12\x43\n\x0conu_tiwi_ind\x18\t \x01(\x0b\x32+.openolt.OnuTransmissionInterferenceWarningH\x00\x12J\n\x17onu_activation_fail_ind\x18\n \x01(\x0b\x32\'.openolt.OnuActivationFailureIndicationH\x00\x12I\n\x18onu_processing_error_ind\x18\x0b \x01(\x0b\x32%.openolt.OnuProcessingErrorIndicationH\x00\x42\x06\n\x04\x64\x61ta\"#\n\rOltIndication\x12\x12\n\noper_state\x18\x01 \x01(\t\"5\n\x0eIntfIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x12\n\noper_state\x18\x02 \x01(\t\"R\n\x11OnuDiscIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12,\n\rserial_number\x18\x02 \x01(\x0b\x32\x15.openolt.SerialNumber\"\x87\x01\n\rOnuIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x12\n\noper_state\x18\x03 \x01(\t\x12\x13\n\x0b\x61\x64min_state\x18\x05 \x01(\t\x12,\n\rserial_number\x18\x04 \x01(\x0b\x32\x15.openolt.SerialNumber\"G\n\x12IntfOperIndication\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0f\n\x07intf_id\x18\x02 \x01(\x07\x12\x12\n\noper_state\x18\x03 \x01(\t\">\n\x0eOmciIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0b\n\x03pkt\x18\x03 \x01(\x0c\"\x89\x01\n\x10PacketIndication\x12\x11\n\tintf_type\x18\x05 \x01(\t\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x12\n\ngemport_id\x18\x02 \x01(\x07\x12\x0f\n\x07\x66low_id\x18\x03 \x01(\x07\x12\x0f\n\x07port_no\x18\x06 \x01(\x07\x12\x0e\n\x06\x63ookie\x18\x07 \x01(\x06\x12\x0b\n\x03pkt\x18\x04 \x01(\x0c\"\x1c\n\tInterface\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\"(\n\tHeartbeat\x12\x1b\n\x13heartbeat_signature\x18\x01 \x01(\x07\"a\n\x03Onu\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12,\n\rserial_number\x18\x03 \x01(\x0b\x32\x15.openolt.SerialNumber\x12\x0b\n\x03pir\x18\x04 \x01(\x07\"7\n\x07OmciMsg\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0b\n\x03pkt\x18\x03 \x01(\x0c\"J\n\tOnuPacket\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0f\n\x07port_no\x18\x04 \x01(\x07\x12\x0b\n\x03pkt\x18\x03 \x01(\x0c\",\n\x0cUplinkPacket\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0b\n\x03pkt\x18\x02 \x01(\x0c\"\x88\x07\n\nDeviceInfo\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\r\n\x05model\x18\x02 \x01(\t\x12\x18\n\x10hardware_version\x18\x03 \x01(\t\x12\x18\n\x10\x66irmware_version\x18\x04 \x01(\t\x12\x11\n\tdevice_id\x18\x10 \x01(\t\x12\x1c\n\x14\x64\x65vice_serial_number\x18\x11 \x01(\t\x12\x11\n\tpon_ports\x18\x0c \x01(\x07\x12\x12\n\ntechnology\x18\x05 \x01(\t\x12\x14\n\x0conu_id_start\x18\x06 \x01(\x07\x12\x12\n\nonu_id_end\x18\x07 \x01(\x07\x12\x16\n\x0e\x61lloc_id_start\x18\x08 \x01(\x07\x12\x14\n\x0c\x61lloc_id_end\x18\t \x01(\x07\x12\x18\n\x10gemport_id_start\x18\n \x01(\x07\x12\x16\n\x0egemport_id_end\x18\x0b \x01(\x07\x12\x15\n\rflow_id_start\x18\r \x01(\x07\x12\x13\n\x0b\x66low_id_end\x18\x0e \x01(\x07\x12\x38\n\x06ranges\x18\x0f \x03(\x0b\x32(.openolt.DeviceInfo.DeviceResourceRanges\x1a\xde\x03\n\x14\x44\x65viceResourceRanges\x12\x10\n\x08intf_ids\x18\x01 \x03(\x07\x12\x12\n\ntechnology\x18\x02 \x01(\t\x12<\n\x05pools\x18\x03 \x03(\x0b\x32-.openolt.DeviceInfo.DeviceResourceRanges.Pool\x1a\xe1\x02\n\x04Pool\x12\x44\n\x04type\x18\x01 \x01(\x0e\x32\x36.openolt.DeviceInfo.DeviceResourceRanges.Pool.PoolType\x12J\n\x07sharing\x18\x02 \x01(\x0e\x32\x39.openolt.DeviceInfo.DeviceResourceRanges.Pool.SharingType\x12\r\n\x05start\x18\x03 \x01(\x07\x12\x0b\n\x03\x65nd\x18\x04 \x01(\x07\"A\n\x08PoolType\x12\n\n\x06ONU_ID\x10\x00\x12\x0c\n\x08\x41LLOC_ID\x10\x01\x12\x0e\n\nGEMPORT_ID\x10\x02\x12\x0b\n\x07\x46LOW_ID\x10\x03\"h\n\x0bSharingType\x12\x16\n\x12\x44\x45\x44ICATED_PER_INTF\x10\x00\x12\x1f\n\x1bSHARED_BY_ALL_INTF_ALL_TECH\x10\x01\x12 \n\x1cSHARED_BY_ALL_INTF_SAME_TECH\x10\x02\"\x8c\x02\n\nClassifier\x12\x0e\n\x06o_tpid\x18\x01 \x01(\x07\x12\r\n\x05o_vid\x18\x02 \x01(\x07\x12\x0e\n\x06i_tpid\x18\x03 \x01(\x07\x12\r\n\x05i_vid\x18\x04 \x01(\x07\x12\x0f\n\x07o_pbits\x18\x05 \x01(\x07\x12\x0f\n\x07i_pbits\x18\x06 \x01(\x07\x12\x10\n\x08\x65th_type\x18\x07 \x01(\x07\x12\x0f\n\x07\x64st_mac\x18\x08 \x01(\x0c\x12\x0f\n\x07src_mac\x18\t \x01(\x0c\x12\x10\n\x08ip_proto\x18\n \x01(\x07\x12\x0e\n\x06\x64st_ip\x18\x0b \x01(\x07\x12\x0e\n\x06src_ip\x18\x0c \x01(\x07\x12\x10\n\x08src_port\x18\r \x01(\x07\x12\x10\n\x08\x64st_port\x18\x0e \x01(\x07\x12\x14\n\x0cpkt_tag_type\x18\x0f \x01(\t\"R\n\tActionCmd\x12\x15\n\radd_outer_tag\x18\x01 \x01(\x08\x12\x18\n\x10remove_outer_tag\x18\x02 \x01(\x08\x12\x14\n\x0ctrap_to_host\x18\x03 \x01(\x08\"\x89\x01\n\x06\x41\x63tion\x12\x1f\n\x03\x63md\x18\x01 \x01(\x0b\x32\x12.openolt.ActionCmd\x12\r\n\x05o_vid\x18\x02 \x01(\x07\x12\x0f\n\x07o_pbits\x18\x03 \x01(\x07\x12\x0e\n\x06o_tpid\x18\x04 \x01(\x07\x12\r\n\x05i_vid\x18\x05 \x01(\x07\x12\x0f\n\x07i_pbits\x18\x06 \x01(\x07\x12\x0e\n\x06i_tpid\x18\x07 \x01(\x07\"\x9e\x02\n\x04\x46low\x12\x16\n\x0e\x61\x63\x63\x65ss_intf_id\x18\x01 \x01(\x0f\x12\x0e\n\x06onu_id\x18\x02 \x01(\x0f\x12\x0e\n\x06uni_id\x18\x0b \x01(\x0f\x12\x0f\n\x07\x66low_id\x18\x03 \x01(\x07\x12\x11\n\tflow_type\x18\x04 \x01(\t\x12\x10\n\x08\x61lloc_id\x18\n \x01(\x0f\x12\x17\n\x0fnetwork_intf_id\x18\x05 \x01(\x0f\x12\x12\n\ngemport_id\x18\x06 \x01(\x0f\x12\'\n\nclassifier\x18\x07 \x01(\x0b\x32\x13.openolt.Classifier\x12\x1f\n\x06\x61\x63tion\x18\x08 \x01(\x0b\x32\x0f.openolt.Action\x12\x10\n\x08priority\x18\t \x01(\x0f\x12\x0e\n\x06\x63ookie\x18\x0c \x01(\x06\x12\x0f\n\x07port_no\x18\r \x01(\x07\":\n\x0cSerialNumber\x12\x11\n\tvendor_id\x18\x01 \x01(\x0c\x12\x17\n\x0fvendor_specific\x18\x02 \x01(\x0c\"\xfb\x02\n\x0ePortStatistics\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x10\n\x08rx_bytes\x18\x02 \x01(\x06\x12\x12\n\nrx_packets\x18\x03 \x01(\x06\x12\x18\n\x10rx_ucast_packets\x18\x04 \x01(\x06\x12\x18\n\x10rx_mcast_packets\x18\x05 \x01(\x06\x12\x18\n\x10rx_bcast_packets\x18\x06 \x01(\x06\x12\x18\n\x10rx_error_packets\x18\x07 \x01(\x06\x12\x10\n\x08tx_bytes\x18\x08 \x01(\x06\x12\x12\n\ntx_packets\x18\t \x01(\x06\x12\x18\n\x10tx_ucast_packets\x18\n \x01(\x06\x12\x18\n\x10tx_mcast_packets\x18\x0b \x01(\x06\x12\x18\n\x10tx_bcast_packets\x18\x0c \x01(\x06\x12\x18\n\x10tx_error_packets\x18\r \x01(\x06\x12\x15\n\rrx_crc_errors\x18\x0e \x01(\x06\x12\x12\n\nbip_errors\x18\x0f \x01(\x06\x12\x11\n\ttimestamp\x18\x10 \x01(\x07\"\x80\x01\n\x0e\x46lowStatistics\x12\x0f\n\x07\x66low_id\x18\x01 \x01(\x07\x12\x10\n\x08rx_bytes\x18\x02 \x01(\x06\x12\x12\n\nrx_packets\x18\x03 \x01(\x06\x12\x10\n\x08tx_bytes\x18\x08 \x01(\x06\x12\x12\n\ntx_packets\x18\t \x01(\x06\x12\x11\n\ttimestamp\x18\x10 \x01(\x07\"0\n\rLosIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06status\x18\x02 \x01(\t\"F\n\x13\x44yingGaspIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0e\n\x06status\x18\x03 \x01(\t\"\x96\x01\n\x12OnuAlarmIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x12\n\nlos_status\x18\x03 \x01(\t\x12\x12\n\nlob_status\x18\x04 \x01(\t\x12\x18\n\x10lopc_miss_status\x18\x05 \x01(\t\x12\x1d\n\x15lopc_mic_error_status\x18\x06 \x01(\t\"N\n\x1bOnuStartupFailureIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0e\n\x06status\x18\x03 \x01(\t\"m\n\x1aOnuSignalDegradeIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x1e\n\x16inverse_bit_error_rate\x18\x04 \x01(\x07\"m\n\x1aOnuDriftOfWindowIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\r\n\x05\x64rift\x18\x04 \x01(\x07\x12\x0f\n\x07new_eqd\x18\x05 \x01(\x07\"Q\n\x1eOnuLossOfOmciChannelIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0e\n\x06status\x18\x03 \x01(\t\"n\n\x1bOnuSignalsFailureIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x1e\n\x16inverse_bit_error_rate\x18\x04 \x01(\x07\"d\n\"OnuTransmissionInterferenceWarning\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\r\n\x05\x64rift\x18\x04 \x01(\x07\"A\n\x1eOnuActivationFailureIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\"?\n\x1cOnuProcessingErrorIndication\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\"\xb3\x01\n\tScheduler\x12%\n\tdirection\x18\x01 \x01(\x0e\x32\x12.openolt.Direction\x12,\n\radditional_bw\x18\x02 \x01(\x0e\x32\x15.openolt.AdditionalBW\x12\x10\n\x08priority\x18\x03 \x01(\x07\x12\x0e\n\x06weight\x18\x04 \x01(\x07\x12/\n\x0csched_policy\x18\x05 \x01(\x0e\x32\x19.openolt.SchedulingPolicy\"\x90\x01\n\x12TrafficShapingInfo\x12\x0b\n\x03\x63ir\x18\x01 \x01(\x07\x12\x0b\n\x03\x63\x62s\x18\x02 \x01(\x07\x12\x0b\n\x03pir\x18\x03 \x01(\x07\x12\x0b\n\x03pbs\x18\x04 \x01(\x07\x12\x0b\n\x03gir\x18\x05 \x01(\x07\x12\x39\n\nadd_bw_ind\x18\x06 \x01(\x0e\x32%.openolt.InferredAdditionBWIndication\"\xa2\x01\n\x05Tcont\x12%\n\tdirection\x18\x01 \x01(\x0e\x32\x12.openolt.Direction\x12\x10\n\x08\x61lloc_id\x18\x02 \x01(\x07\x12%\n\tscheduler\x18\x03 \x01(\x0b\x32\x12.openolt.Scheduler\x12\x39\n\x14traffic_shaping_info\x18\x04 \x01(\x0b\x32\x1b.openolt.TrafficShapingInfo\"j\n\x06Tconts\x12\x0f\n\x07intf_id\x18\x01 \x01(\x07\x12\x0e\n\x06onu_id\x18\x02 \x01(\x07\x12\x0e\n\x06uni_id\x18\x04 \x01(\x07\x12\x0f\n\x07port_no\x18\x05 \x01(\x07\x12\x1e\n\x06tconts\x18\x03 \x03(\x0b\x32\x0e.openolt.Tcont\"+\n\x15TailDropDiscardConfig\x12\x12\n\nqueue_size\x18\x01 \x01(\x07\"Y\n\x10RedDiscardConfig\x12\x15\n\rmin_threshold\x18\x01 \x01(\x07\x12\x15\n\rmax_threshold\x18\x02 \x01(\x07\x12\x17\n\x0fmax_probability\x18\x03 \x01(\x07\"\x90\x01\n\x11WRedDiscardConfig\x12(\n\x05green\x18\x01 \x01(\x0b\x32\x19.openolt.RedDiscardConfig\x12)\n\x06yellow\x18\x02 \x01(\x0b\x32\x19.openolt.RedDiscardConfig\x12&\n\x03red\x18\x03 \x01(\x0b\x32\x19.openolt.RedDiscardConfig\"\x89\x02\n\rDiscardConfig\x12.\n\x0e\x64iscard_policy\x18\x01 \x01(\x0e\x32\x16.openolt.DiscardPolicy\x12\x42\n\x18tail_drop_discard_config\x18\x02 \x01(\x0b\x32\x1e.openolt.TailDropDiscardConfigH\x00\x12\x37\n\x12red_discard_config\x18\x03 \x01(\x0b\x32\x19.openolt.RedDiscardConfigH\x00\x12\x39\n\x13wred_discard_config\x18\x04 \x01(\x0b\x32\x1a.openolt.WRedDiscardConfigH\x00\x42\x10\n\x0e\x64iscard_config\"\x07\n\x05\x45mpty*<\n\tDirection\x12\x0c\n\x08UPSTREAM\x10\x00\x12\x0e\n\nDOWNSTREAM\x10\x01\x12\x11\n\rBIDIRECTIONAL\x10\x02*;\n\x10SchedulingPolicy\x12\x07\n\x03WRR\x10\x00\x12\x12\n\x0eStrictPriority\x10\x01\x12\n\n\x06Hybrid\x10\x02*n\n\x0c\x41\x64\x64itionalBW\x12\x15\n\x11\x41\x64\x64itionalBW_None\x10\x00\x12\x13\n\x0f\x41\x64\x64itionalBW_NA\x10\x01\x12\x1b\n\x17\x41\x64\x64itionalBW_BestEffort\x10\x02\x12\x15\n\x11\x41\x64\x64itionalBW_Auto\x10\x03*?\n\rDiscardPolicy\x12\x0c\n\x08TailDrop\x10\x00\x12\r\n\tWTailDrop\x10\x01\x12\x07\n\x03Red\x10\x02\x12\x08\n\x04WRed\x10\x03*\x9c\x01\n\x1cInferredAdditionBWIndication\x12%\n!InferredAdditionBWIndication_None\x10\x00\x12(\n$InferredAdditionBWIndication_Assured\x10\x01\x12+\n\'InferredAdditionBWIndication_BestEffort\x10\x02\x32\xa7\x0b\n\x07Openolt\x12\x44\n\nDisableOlt\x12\x0e.openolt.Empty\x1a\x0e.openolt.Empty\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/Disable:\x01*\x12\x46\n\x0bReenableOlt\x12\x0e.openolt.Empty\x1a\x0e.openolt.Empty\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/Reenable:\x01*\x12\x45\n\x0b\x41\x63tivateOnu\x12\x0c.openolt.Onu\x1a\x0e.openolt.Empty\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/v1/EnableOnu:\x01*\x12H\n\rDeactivateOnu\x12\x0c.openolt.Onu\x1a\x0e.openolt.Empty\"\x19\x82\xd3\xe4\x93\x02\x13\"\x0e/v1/DisableOnu:\x01*\x12\x43\n\tDeleteOnu\x12\x0c.openolt.Onu\x1a\x0e.openolt.Empty\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/v1/DeleteOnu:\x01*\x12I\n\nOmciMsgOut\x12\x10.openolt.OmciMsg\x1a\x0e.openolt.Empty\"\x19\x82\xd3\xe4\x93\x02\x13\"\x0e/v1/OmciMsgOut:\x01*\x12O\n\x0cOnuPacketOut\x12\x12.openolt.OnuPacket\x1a\x0e.openolt.Empty\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v1/OnuPacketOut:\x01*\x12X\n\x0fUplinkPacketOut\x12\x15.openolt.UplinkPacket\x1a\x0e.openolt.Empty\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/v1/UplinkPacketOut:\x01*\x12@\n\x07\x46lowAdd\x12\r.openolt.Flow\x1a\x0e.openolt.Empty\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/FlowAdd:\x01*\x12\x46\n\nFlowRemove\x12\r.openolt.Flow\x1a\x0e.openolt.Empty\"\x19\x82\xd3\xe4\x93\x02\x13\"\x0e/v1/FlowRemove:\x01*\x12S\n\x0eHeartbeatCheck\x12\x0e.openolt.Empty\x1a\x12.openolt.Heartbeat\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/HeartbeatCheck:\x01*\x12M\n\x0b\x45nablePonIf\x12\x12.openolt.Interface\x1a\x0e.openolt.Empty\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/EnablePonIf:\x01*\x12O\n\x0c\x44isablePonIf\x12\x12.openolt.Interface\x1a\x0e.openolt.Empty\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v1/DisablePonIf:\x01*\x12R\n\rGetDeviceInfo\x12\x0e.openolt.Empty\x1a\x13.openolt.DeviceInfo\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/GetDeviceInfo:\x01*\x12?\n\x06Reboot\x12\x0e.openolt.Empty\x1a\x0e.openolt.Empty\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/v1/Reboot:\x01*\x12U\n\x11\x43ollectStatistics\x12\x0e.openolt.Empty\x1a\x0e.openolt.Empty\" \x82\xd3\xe4\x93\x02\x1a\"\x15/v1/CollectStatistics:\x01*\x12L\n\x0c\x43reateTconts\x12\x0f.openolt.Tconts\x1a\x0e.openolt.Empty\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v1/CreateTconts:\x01*\x12L\n\x0cRemoveTconts\x12\x0f.openolt.Tconts\x1a\x0e.openolt.Empty\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v1/RemoveTconts:\x01*\x12;\n\x10\x45nableIndication\x12\x0e.openolt.Empty\x1a\x13.openolt.Indication\"\x00\x30\x01\x62\x06proto3')
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
+  dependencies=[annotations__pb2.DESCRIPTOR,])
 
 _DIRECTION = _descriptor.EnumDescriptor(
   name='Direction',
@@ -47,8 +47,8 @@ _DIRECTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6675,
-  serialized_end=6735,
+  serialized_start=6664,
+  serialized_end=6724,
 )
 _sym_db.RegisterEnumDescriptor(_DIRECTION)
 
@@ -74,8 +74,8 @@ _SCHEDULINGPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6737,
-  serialized_end=6796,
+  serialized_start=6726,
+  serialized_end=6785,
 )
 _sym_db.RegisterEnumDescriptor(_SCHEDULINGPOLICY)
 
@@ -105,8 +105,8 @@ _ADDITIONALBW = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6798,
-  serialized_end=6908,
+  serialized_start=6787,
+  serialized_end=6897,
 )
 _sym_db.RegisterEnumDescriptor(_ADDITIONALBW)
 
@@ -136,8 +136,8 @@ _DISCARDPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6910,
-  serialized_end=6973,
+  serialized_start=6899,
+  serialized_end=6962,
 )
 _sym_db.RegisterEnumDescriptor(_DISCARDPOLICY)
 
@@ -163,8 +163,8 @@ _INFERREDADDITIONBWINDICATION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6976,
-  serialized_end=7132,
+  serialized_start=6965,
+  serialized_end=7121,
 )
 _sym_db.RegisterEnumDescriptor(_INFERREDADDITIONBWINDICATION)
 
@@ -213,8 +213,8 @@ _DEVICEINFO_DEVICERESOURCERANGES_POOL_POOLTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2977,
-  serialized_end=3042,
+  serialized_start=2966,
+  serialized_end=3031,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICEINFO_DEVICERESOURCERANGES_POOL_POOLTYPE)
 
@@ -239,8 +239,8 @@ _DEVICEINFO_DEVICERESOURCERANGES_POOL_SHARINGTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3044,
-  serialized_end=3148,
+  serialized_start=3033,
+  serialized_end=3137,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICEINFO_DEVICERESOURCERANGES_POOL_SHARINGTYPE)
 
@@ -337,8 +337,8 @@ _INDICATION = _descriptor.Descriptor(
       name='data', full_name='openolt.Indication.data',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=57,
-  serialized_end=546,
+  serialized_start=46,
+  serialized_end=535,
 )
 
 
@@ -441,8 +441,8 @@ _ALARMINDICATION = _descriptor.Descriptor(
       name='data', full_name='openolt.AlarmIndication.data',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=549,
-  serialized_end=1300,
+  serialized_start=538,
+  serialized_end=1289,
 )
 
 
@@ -472,8 +472,8 @@ _OLTINDICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1302,
-  serialized_end=1337,
+  serialized_start=1291,
+  serialized_end=1326,
 )
 
 
@@ -510,8 +510,8 @@ _INTFINDICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1339,
-  serialized_end=1392,
+  serialized_start=1328,
+  serialized_end=1381,
 )
 
 
@@ -548,8 +548,8 @@ _ONUDISCINDICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1394,
-  serialized_end=1476,
+  serialized_start=1383,
+  serialized_end=1465,
 )
 
 
@@ -607,8 +607,8 @@ _ONUINDICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1479,
-  serialized_end=1614,
+  serialized_start=1468,
+  serialized_end=1603,
 )
 
 
@@ -652,8 +652,8 @@ _INTFOPERINDICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1616,
-  serialized_end=1687,
+  serialized_start=1605,
+  serialized_end=1676,
 )
 
 
@@ -697,8 +697,8 @@ _OMCIINDICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1689,
-  serialized_end=1751,
+  serialized_start=1678,
+  serialized_end=1740,
 )
 
 
@@ -770,8 +770,8 @@ _PACKETINDICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1754,
-  serialized_end=1891,
+  serialized_start=1743,
+  serialized_end=1880,
 )
 
 
@@ -801,8 +801,8 @@ _INTERFACE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1893,
-  serialized_end=1921,
+  serialized_start=1882,
+  serialized_end=1910,
 )
 
 
@@ -832,8 +832,8 @@ _HEARTBEAT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1923,
-  serialized_end=1963,
+  serialized_start=1912,
+  serialized_end=1952,
 )
 
 
@@ -884,8 +884,8 @@ _ONU = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1965,
-  serialized_end=2062,
+  serialized_start=1954,
+  serialized_end=2051,
 )
 
 
@@ -929,8 +929,8 @@ _OMCIMSG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2064,
-  serialized_end=2119,
+  serialized_start=2053,
+  serialized_end=2108,
 )
 
 
@@ -981,8 +981,8 @@ _ONUPACKET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2121,
-  serialized_end=2195,
+  serialized_start=2110,
+  serialized_end=2184,
 )
 
 
@@ -1019,8 +1019,8 @@ _UPLINKPACKET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2197,
-  serialized_end=2241,
+  serialized_start=2186,
+  serialized_end=2230,
 )
 
 
@@ -1073,8 +1073,8 @@ _DEVICEINFO_DEVICERESOURCERANGES_POOL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2795,
-  serialized_end=3148,
+  serialized_start=2784,
+  serialized_end=3137,
 )
 
 _DEVICEINFO_DEVICERESOURCERANGES = _descriptor.Descriptor(
@@ -1117,8 +1117,8 @@ _DEVICEINFO_DEVICERESOURCERANGES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2670,
-  serialized_end=3148,
+  serialized_start=2659,
+  serialized_end=3137,
 )
 
 _DEVICEINFO = _descriptor.Descriptor(
@@ -1259,8 +1259,8 @@ _DEVICEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2244,
-  serialized_end=3148,
+  serialized_start=2233,
+  serialized_end=3137,
 )
 
 
@@ -1388,8 +1388,8 @@ _CLASSIFIER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3151,
-  serialized_end=3419,
+  serialized_start=3140,
+  serialized_end=3408,
 )
 
 
@@ -1433,8 +1433,8 @@ _ACTIONCMD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3421,
-  serialized_end=3503,
+  serialized_start=3410,
+  serialized_end=3492,
 )
 
 
@@ -1506,8 +1506,8 @@ _ACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3506,
-  serialized_end=3643,
+  serialized_start=3495,
+  serialized_end=3632,
 )
 
 
@@ -1621,8 +1621,8 @@ _FLOW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3646,
-  serialized_end=3932,
+  serialized_start=3635,
+  serialized_end=3921,
 )
 
 
@@ -1659,8 +1659,8 @@ _SERIALNUMBER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3934,
-  serialized_end=3992,
+  serialized_start=3923,
+  serialized_end=3981,
 )
 
 
@@ -1795,8 +1795,8 @@ _PORTSTATISTICS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3995,
-  serialized_end=4374,
+  serialized_start=3984,
+  serialized_end=4363,
 )
 
 
@@ -1861,8 +1861,8 @@ _FLOWSTATISTICS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4377,
-  serialized_end=4505,
+  serialized_start=4366,
+  serialized_end=4494,
 )
 
 
@@ -1899,8 +1899,8 @@ _LOSINDICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4507,
-  serialized_end=4555,
+  serialized_start=4496,
+  serialized_end=4544,
 )
 
 
@@ -1944,8 +1944,8 @@ _DYINGGASPINDICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4557,
-  serialized_end=4627,
+  serialized_start=4546,
+  serialized_end=4616,
 )
 
 
@@ -2010,8 +2010,8 @@ _ONUALARMINDICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4630,
-  serialized_end=4780,
+  serialized_start=4619,
+  serialized_end=4769,
 )
 
 
@@ -2055,8 +2055,8 @@ _ONUSTARTUPFAILUREINDICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4782,
-  serialized_end=4860,
+  serialized_start=4771,
+  serialized_end=4849,
 )
 
 
@@ -2107,8 +2107,8 @@ _ONUSIGNALDEGRADEINDICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4862,
-  serialized_end=4971,
+  serialized_start=4851,
+  serialized_end=4960,
 )
 
 
@@ -2166,8 +2166,8 @@ _ONUDRIFTOFWINDOWINDICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4973,
-  serialized_end=5082,
+  serialized_start=4962,
+  serialized_end=5071,
 )
 
 
@@ -2211,8 +2211,8 @@ _ONULOSSOFOMCICHANNELINDICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5084,
-  serialized_end=5165,
+  serialized_start=5073,
+  serialized_end=5154,
 )
 
 
@@ -2263,8 +2263,8 @@ _ONUSIGNALSFAILUREINDICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5167,
-  serialized_end=5277,
+  serialized_start=5156,
+  serialized_end=5266,
 )
 
 
@@ -2315,8 +2315,8 @@ _ONUTRANSMISSIONINTERFERENCEWARNING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5279,
-  serialized_end=5379,
+  serialized_start=5268,
+  serialized_end=5368,
 )
 
 
@@ -2353,8 +2353,8 @@ _ONUACTIVATIONFAILUREINDICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5381,
-  serialized_end=5446,
+  serialized_start=5370,
+  serialized_end=5435,
 )
 
 
@@ -2391,8 +2391,8 @@ _ONUPROCESSINGERRORINDICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5448,
-  serialized_end=5511,
+  serialized_start=5437,
+  serialized_end=5500,
 )
 
 
@@ -2450,8 +2450,8 @@ _SCHEDULER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5514,
-  serialized_end=5693,
+  serialized_start=5503,
+  serialized_end=5682,
 )
 
 
@@ -2516,8 +2516,8 @@ _TRAFFICSHAPINGINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5696,
-  serialized_end=5840,
+  serialized_start=5685,
+  serialized_end=5829,
 )
 
 
@@ -2568,8 +2568,8 @@ _TCONT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5843,
-  serialized_end=6005,
+  serialized_start=5832,
+  serialized_end=5994,
 )
 
 
@@ -2627,8 +2627,8 @@ _TCONTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6007,
-  serialized_end=6113,
+  serialized_start=5996,
+  serialized_end=6102,
 )
 
 
@@ -2658,8 +2658,8 @@ _TAILDROPDISCARDCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6115,
-  serialized_end=6158,
+  serialized_start=6104,
+  serialized_end=6147,
 )
 
 
@@ -2703,8 +2703,8 @@ _REDDISCARDCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6160,
-  serialized_end=6249,
+  serialized_start=6149,
+  serialized_end=6238,
 )
 
 
@@ -2748,8 +2748,8 @@ _WREDDISCARDCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6252,
-  serialized_end=6396,
+  serialized_start=6241,
+  serialized_end=6385,
 )
 
 
@@ -2803,8 +2803,8 @@ _DISCARDCONFIG = _descriptor.Descriptor(
       name='discard_config', full_name='openolt.DiscardConfig.discard_config',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=6399,
-  serialized_end=6664,
+  serialized_start=6388,
+  serialized_end=6653,
 )
 
 
@@ -2827,8 +2827,8 @@ _EMPTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6666,
-  serialized_end=6673,
+  serialized_start=6655,
+  serialized_end=6662,
 )
 
 _INDICATION.fields_by_name['olt_ind'].message_type = _OLTINDICATION
@@ -3328,8 +3328,8 @@ _OPENOLT = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=7135,
-  serialized_end=8582,
+  serialized_start=7124,
+  serialized_end=8571,
   methods=[
   _descriptor.MethodDescriptor(
     name='DisableOlt',
