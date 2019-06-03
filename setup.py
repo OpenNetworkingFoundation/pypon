@@ -25,16 +25,26 @@ def read(fname):
 
 setup(
     name='openolt',
-    version='1.6.1.3',
+    version='1.6.1.23',
     description=('White box PON OLT software'),
     author='Shad Ansari',
     author_email='shad69@gmail.com',
     license='Apache License 2.0',
     keywords='openolt pon whitebox',
-    url='https://github.com/shadansari/pontk',
-    packages=['protos.openolt',
-              'protos.third_party.google.api',
-              'openolt'],
+    url='https://github.com/shadansari',
+    packages=[
+        'openolt',
+        'openolt.google',
+        'openolt.google.api',
+    ],
+    install_requires=[
+        'futures',
+        'structlog',
+        'simplejson',
+        'protobuf',
+        'grpcio',
+        'confluent_kafka',
+    ],
     long_description=read('README.md'),
     long_description_content_type='text/markdown',
     classifiers=[
