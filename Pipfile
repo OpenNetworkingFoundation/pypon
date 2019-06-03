@@ -21,6 +21,7 @@ simplejson = "*"
 six = "*"
 structlog = "*"
 urllib3 = "*"
+grpcio-tools = "*"
 
 [requires]
 python_version = "2.7"
