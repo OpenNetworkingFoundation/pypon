@@ -1,6 +1,15 @@
 #!/usr/bin/env python
 
+import sys
 from openolt import sb_grpc_rx
 
-print "Hello, world!"
-sb_grpc_rx.SbGrpcRx("localhost:9092", "10.90.0.114:9191").start()
+if len(sys.argv) < 2:
+    sys.stderr.write(
+        'Usage: %s <olt ip:port>\n\n' % sys.argv[0])
+    sys.exit(1)
+
+# broker = sys.argv[1]
+broker = "localhost:9092"
+olt_ip = sys.argv[1]
+
+sb_grpc_rx.SbGrpcRx(broker, olt_ip + ":9191").start()
