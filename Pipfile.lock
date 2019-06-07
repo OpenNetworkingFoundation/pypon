@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "642c306a3e44acff2d914eac399979d339008bd8c59aa62b8360718e47e9e7ca"
+            "sha256": "a31cd0cc93b67e1bf889936bdb4f837d815db5b238221b40b55ddc4baadd94e6"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -187,9 +187,6 @@
             ],
             "index": "pypi",
             "version": "==0.5.6"
-        },
-        "ponster": {
-            "path": "."
         },
         "protobuf": {
             "hashes": [
