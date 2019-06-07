@@ -26,7 +26,7 @@ def read(fname):
 
 setup(
     name='ponster',
-    version='1.6.1.29',
+    version='0.0.0.2',
     description=('White box PON OLT software'),
     author='Shad Ansari',
     author_email='shad69@gmail.com',
@@ -44,6 +44,7 @@ setup(
         'protobuf',
         'grpcio',
         'confluent_kafka',
+        'click',
     ],
     long_description=read('README.md'),
     long_description_content_type='text/markdown',

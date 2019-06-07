@@ -27,9 +27,9 @@ from confluent_kafka import Producer
 log = structlog.get_logger()
 
 
-class SbGrpcRx(object):
+class Indications(object):
     def __init__(self, broker, host_and_port):
-        super(SbGrpcRx, self).__init__()
+        super(Indications, self).__init__()
         log.debug('Southbound Grpc Rx')
         self.host_and_port = host_and_port
         self.broker = broker
@@ -106,4 +106,4 @@ if __name__ == '__main__':
     broker = sys.argv[1]
     host_and_port = sys.argv[2]
 
-    SbGrpcRx(broker, host_and_port).start()
+    Indications(broker, host_and_port).start()

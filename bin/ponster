@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
-from ponster import sb_grpc_rx
+from ponster import ind
 import click
 
 
 @click.command()
 @click.argument('olt')
-def main(olt, broker):
-    sb_grpc_rx.SbGrpcRx(broker, olt).start()
+def main(olt, broker='localhost:9092'):
+    ind.Indications(broker, olt).start()
 
 
 if __name__ == "__main__":
