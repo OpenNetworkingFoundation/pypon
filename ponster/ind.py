@@ -28,7 +28,7 @@ log = structlog.get_logger()
 
 
 class Indications(object):
-    def __init__(self, host_and_port, broker='localhost:9092'):
+    def __init__(self, host_and_port, broker):
         super(Indications, self).__init__()
         log.debug('Southbound Grpc Rx')
         self.host_and_port = host_and_port
@@ -38,7 +38,7 @@ class Indications(object):
             # Start indications_process
             self.indications_process = Process(
                 target=self.process_indications,
-                args=(broker, host_and_port,))
+                args=(host_and_port, broker,))
         except Exception as e:
             log.exception('Indications initialization failed', e=e)
         else:
