@@ -6,7 +6,8 @@ import click
 
 @click.command()
 @click.argument('olt')
-def main(olt, broker='localhost:9092'):
+@click.option('--broker', '-b')
+def main(olt, broker):
     ind.Indications(broker, olt).start()
 
 

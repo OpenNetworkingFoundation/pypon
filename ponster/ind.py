@@ -28,7 +28,7 @@ log = structlog.get_logger()
 
 
 class Indications(object):
-    def __init__(self, broker, host_and_port):
+    def __init__(self, host_and_port, broker='localhost:9092'):
         super(Indications, self).__init__()
         log.debug('Southbound Grpc Rx')
         self.host_and_port = host_and_port
@@ -40,9 +40,9 @@ class Indications(object):
                 target=self.process_indications,
                 args=(broker, host_and_port,))
         except Exception as e:
-            log.exception('Southbound Grpc Rx initialization failed', e=e)
+            log.exception('Indications initialization failed', e=e)
         else:
-            log.debug('Southbound Grpc Rx initialized')
+            log.debug('Indications initialized')
 
     def start(self):
         try:
@@ -59,7 +59,7 @@ class Indications(object):
         except KeyboardInterrupt:
             self.indications_process.terminate()
 
-    def process_indications(self, broker, host_and_port):
+    def process_indications(self, host_and_port, broker):
         channel = grpc.insecure_channel(host_and_port)
         stub = openolt_pb2_grpc.OpenoltStub(channel)
         stream = stub.EnableIndication(openolt_pb2.Empty())
@@ -85,7 +85,7 @@ class Indications(object):
                 break
                 '''
             else:
-                log.debug("openolt grpc rx indication", indication=ind)
+                sys.stdout.write(str(ind))
                 if ind.HasField('pkt_ind'):
                     p.produce(pktin_topic,
                               dumps(MessageToJson(
