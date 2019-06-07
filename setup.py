@@ -26,7 +26,7 @@ def read(fname):
 
 setup(
     name='ponster',
-    version='0.0.0.2',
+    version='0.0.0.4',
     description=('White box PON OLT software'),
     author='Shad Ansari',
     author_email='shad69@gmail.com',

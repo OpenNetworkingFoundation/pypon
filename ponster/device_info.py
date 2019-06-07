@@ -65,16 +65,17 @@ class DeviceInfo(object):
         while True:
             try:
                 self.device_info = self.stub.GetDeviceInfo(openolt_pb2.Empty())
-                if __name__ == '__main__':
-                    sys.stdout.write(str(self.device_info))
-                break
+                print(self.device_info)
+                return
             except Exception as e:
                 if delay > timeout:
                     log.error("Timed out, giving up...")
                     return
                 else:
-                    log.info("Retrying %s in %ds: %s" % (self.host_and_port,
-                                                         delay, repr(e)))
+                    print("Retrying %s" % self.host_and_port)
+                    e = e
+                    # log.info("Retrying %s in %ds: %s" % (self.host_and_port,
+                    #                                      delay, repr(e)))
                     time.sleep(delay)
                     if exponential_back_off:
                         delay += delay
