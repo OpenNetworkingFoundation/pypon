@@ -36,7 +36,7 @@ setup(
     packages=[
         'ponstar',
     ],
-    scripts=['bin/ponstar'],
+    scripts=['bin/ponctl'],
     install_requires=[
         'futures',
         'structlog',
