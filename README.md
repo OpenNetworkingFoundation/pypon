@@ -1,26 +1,26 @@
-# ponster
+# ponstar
 
-ponster - A simple controller for  PON Optical Line Terminals (OLTs) that support the VOLTHA project's Openolt api.
+ponstar - A simple controller for  PON Optical Line Terminals (OLTs) that support the VOLTHA project's Openolt api.
 
 ## Install
 ### Install and start Confluent Kafka
-### Install ponster
+### Install ponstar
 ```
-pip install ponster
+pip install ponstar
 ```
 ## Develop
 ```
 git clone git@github.com:shadansari/openolt.git
-cd ponster 
+cd ponstar 
 pipenv shell
 pipenv install
 make protos
 ```
 
 ## Test
-### Start ponster
+### Start ponstar
 ```
-ponster <olt ip address>
+ponstar <olt ip address>
 ```
 
 ### Read openolt indications from kafka

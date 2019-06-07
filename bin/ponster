@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
-from ponster import ind as i
-from ponster import device_info as d
+from ponstar import ind as i
+from ponstar import device_info as d
 import click
 
 
 @click.group()
 def main():
-    """ponster - Command-line utility for managing PON whiteboxes"""
+    """ponstar - Command-line utility for managing PON whiteboxes"""
     pass
 
 

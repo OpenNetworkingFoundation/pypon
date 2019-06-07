@@ -32,7 +32,7 @@ clean:
 
 
 protos-clean:
-	find ponster -name '*pb2.py' | xargs rm -f
-	find ponster -name '*pb2_grpc.py' | xargs rm -f
+	find ponstar -name '*pb2.py' | xargs rm -f
+	find ponstar -name '*pb2_grpc.py' | xargs rm -f
 
 .PHONY: protos
