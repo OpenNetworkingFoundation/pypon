@@ -1,26 +1,26 @@
-# openoltd
+# ponster
 
-openoltd - A simple controller for  PON Optical Line Terminals (OLTs) that support the VOLTHA project's Openolt api.
+ponster - A simple controller for  PON Optical Line Terminals (OLTs) that support the VOLTHA project's Openolt api.
 
 ## Install
 ### Install and start Confluent Kafka
-### Install openoltd
+### Install ponster
 ```
-pip install openoltd
+pip install ponster
 ```
 ## Develop
 ```
 git clone git@github.com:shadansari/openolt.git
-cd openolt
+cd ponster 
 pipenv shell
 pipenv install
 make protos
 ```
 
 ## Test
-### Start openoltd
+### Start ponster
 ```
-openoltd <olt ip address>
+ponster <olt ip address>
 ```
 
 ### Read openolt indications from kafka

@@ -25,7 +25,7 @@ def read(fname):
 
 
 setup(
-    name='openoltd',
+    name='ponster',
     version='1.6.1.29',
     description=('White box PON OLT software'),
     author='Shad Ansari',
@@ -34,9 +34,9 @@ setup(
     keywords='openolt pon whitebox',
     url='https://github.com/shadansari',
     packages=[
-        'openoltd',
+        'ponster',
     ],
-    scripts=['bin/openoltd'],
+    scripts=['bin/ponster'],
     install_requires=[
         'futures',
         'structlog',
