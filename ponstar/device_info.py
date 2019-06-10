@@ -26,17 +26,16 @@ log = structlog.get_logger()
 
 
 class DeviceInfo(object):
-    def __init__(self, host_and_port, broker='localhost:9092'):
+    def __init__(self, host_and_port):
         super(DeviceInfo, self).__init__()
         self.host_and_port = host_and_port
-        self.broker = broker
         self.device_info = None
 
         try:
             # Start indications_process
             self.process = Process(
                 target=self.main,
-                args=(host_and_port, broker,))
+                args=(host_and_port,))
         except Exception as e:
             log.exception('Olt initialization failed', e=e)
 
@@ -51,7 +50,7 @@ class DeviceInfo(object):
         except KeyboardInterrupt:
             self.process.terminate()
 
-    def main(self, host_and_port, broker):
+    def main(self, host_and_port):
         channel = grpc.insecure_channel(self.host_and_port)
         self.stub = openolt_pb2_grpc.OpenoltStub(channel)
 

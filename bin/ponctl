@@ -12,24 +12,20 @@ def main():
 
 
 @main.command()
-@click.argument('olt')
+@click.argument('olt_host_port')
 @click.option('--broker', '-b', help='Kafka broker in the form of HOST:PORT')
-def ind(olt, broker):
-    """Get streaming indications from OLT and, optionally,
-        send it to Kafka BROKER. OLT and BROKER are in the
-        form of HOST:PORT."""
-    print "olt ip: ", olt
-    i.Indications(olt, broker).start()
-
-
-@main.command()
-@click.argument('olt')
-@click.option('--broker', '-b', help='Kafka broker in the form of HOST:PORT')
-def devinfo(olt, broker):
+def ind(olt_host_port, broker):
     """Get device info from OLT and, optionally,
         send them to Kafka BROKER. OLT and BROKER are in the
         form of HOST:PORT."""
-    d.DeviceInfo(olt).start()
+    i.Indications(olt_host_port, broker).start()
+
+
+@main.command()
+@click.argument('olt_host_port')
+def devinfo(olt_host_port):
+    """Get device info from OLT_HOST_PORT."""
+    d.DeviceInfo(olt_host_port).start()
 
 
 if __name__ == "__main__":

@@ -23,6 +23,7 @@ structlog = "*"
 urllib3 = "*"
 grpcio-tools = "*"
 click = "*"
+ponstar = {path = ".",editable = true}
 
 [requires]
 python_version = "2.7"
