@@ -1,14 +1,14 @@
-# ponstar
+# pypon
 
-ponstar - A simple controller for  PON Optical Line Terminals (OLTs) that support the VOLTHA project's Openolt api.
+pypon - A simple controller for  PON Optical Line Terminals (OLTs) that support the VOLTHA project's Openolt api.
 
-## Install ponstar in a Python virtual environment
+## Install pypon in a Python virtual environment
 ```
 $ virtualenv myenv
 .. some output ..
 
 $ source myenv/bin/activate
-(myenv) $ pip install ponstar
+(myenv) $ pip install pypon
 ```
 ## Check ponctl is installed
 ```
@@ -58,7 +58,7 @@ confluent-kafka/consumer.py localhost:9092 foo openolt.ind-10.90.0.114
 ## Develop
 ```
 git clone git@github.com:shadansari/openolt.git
-cd ponstar 
+cd pypon
 pipenv shell
 pipenv install -e .
 ```

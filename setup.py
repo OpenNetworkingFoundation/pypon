@@ -25,7 +25,7 @@ def read(fname):
 
 
 setup(
-    name='ponstar',
+    name='pypon',
     version='0.0.0.8',
     description=('White box PON OLT software'),
     author='Shad Ansari',
@@ -34,7 +34,7 @@ setup(
     keywords='openolt pon whitebox',
     url='https://github.com/shadansari',
     packages=[
-        'ponstar',
+        'pypon',
     ],
     scripts=['bin/ponctl'],
     install_requires=[

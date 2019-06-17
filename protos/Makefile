@@ -29,8 +29,8 @@ protos: $(PROTO_PB2_FILES)
 	@echo "Building protocol buffer artifacts from $<"
 	env LD_LIBRARY_PATH=$(PROTOC_LIBDIR) python -m grpc.tools.protoc \
 	    -I. \
-	    --python_out=../ponstar \
-	    --grpc_python_out=../ponstar \
+	    --python_out=../pypon \
+	    --grpc_python_out=../pypon \
 	    $<
 
 clean:

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-from ponstar import ind as i
-from ponstar import device_info as d
+from pypon import ind as i
+from pypon import device_info as d
 import click
 
 
