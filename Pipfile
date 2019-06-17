@@ -23,6 +23,7 @@ structlog = "*"
 urllib3 = "*"
 grpcio-tools = "*"
 click = "*"
+pypon = {path = ".",editable = true}
 
 [requires]
 python_version = "2.7"
