@@ -60,7 +60,7 @@ confluent-kafka/consumer.py localhost:9092 foo openolt.ind-10.90.0.114
 git clone git@github.com:shadansari/openolt.git
 cd pypon
 pipenv shell
-pipenv install -e .
+pipenv install
 ```
 Rebuild protobufs if changed:
 ```
