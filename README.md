@@ -1,6 +1,6 @@
 # pypon
 
-pypon - A simple controller for  PON Optical Line Terminals (OLTs) that support the VOLTHA project's Openolt api.
+pypon - A simple controller for  PON Optical Line Terminals (OLTs) that support the VOLTHA project's Openolt API.
 
 ## Install pypon in a Python virtual environment
 ```
@@ -20,14 +20,14 @@ $ which ponctl
 $ ponctl --help
 Usage: ponctl [OPTIONS] COMMAND [ARGS]...
 
-  ponctl - Command-line utility for managing PON whiteboxes
+  ponctl - Command-line utility for managing PON white-boxes
 
   Options:
     --help  Show this message and exit.
 
     Commands:
       devinfo  Get device info from OLT_HOST_PORT.
-        ind      Get device info from OLT and, optionally, send them to Kafka...
+        ind      Get device info from OLT and, optionally, send them to Kafka
 ```
 ### Use ponctl to display OLT device info
 ```
@@ -62,7 +62,7 @@ cd pypon
 pipenv shell
 pipenv install
 ```
-Rebuild protobufs if changed:
+Rebuild protobufs if they've changed:
 ```
 make protos
 ```
