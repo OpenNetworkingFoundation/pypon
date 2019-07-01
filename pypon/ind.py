@@ -43,7 +43,7 @@ class Indications(object):
             log.exception('Indications initialization failed', e=e)
         else:
             log.debug('Indications initialized')
-
+        
     def start(self):
         try:
             # Start indications_process
@@ -105,5 +105,5 @@ if __name__ == '__main__':
 
     broker = sys.argv[1]
     host_and_port = sys.argv[2]
-
-    Indications(broker, host_and_port).start()
+    indication = Indications(broker, host_and_port)
+    indication.start()

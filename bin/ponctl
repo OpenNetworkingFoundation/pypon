@@ -2,6 +2,7 @@
 
 from pypon import ind as i
 from pypon import device_info as d
+from pypon import interface_info as intf_info
 import click
 
 
@@ -20,12 +21,21 @@ def ind(olt_host_port, broker):
         form of HOST:PORT."""
     i.Indications(olt_host_port, broker).start()
 
-
 @main.command()
 @click.argument('olt_host_port')
 def devinfo(olt_host_port):
     """Get device info from OLT_HOST_PORT."""
     d.DeviceInfo(olt_host_port).start()
+
+
+@main.command()
+@click.argument('olt_host_port')
+@click.argument('intf_id')
+def ifinfo(olt_host_port, intf_id):
+    """Get interface info from OLT_HOST_PORT with 
+        given interface ID."""
+    intf_info.InterfaceInfo(olt_host_port, intf_id).start()
+
 
 
 if __name__ == "__main__":

@@ -74,6 +74,11 @@ class OpenoltStub(object):
         request_serializer=openolt__pb2.Interface.SerializeToString,
         response_deserializer=openolt__pb2.Empty.FromString,
         )
+    self.GetPonIf = channel.unary_unary(
+        '/openolt.Openolt/GetPonIf',
+        request_serializer=openolt__pb2.Interface.SerializeToString,
+        response_deserializer=openolt__pb2.IntfIndication.FromString,
+        )
     self.DisablePonIf = channel.unary_unary(
         '/openolt.Openolt/DisablePonIf',
         request_serializer=openolt__pb2.Interface.SerializeToString,
@@ -116,8 +121,9 @@ class OpenoltServicer(object):
   pass
 
   def DisableOlt(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """rpc SayHello(HelloRequest) returns (HelloReply){ }
+
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
@@ -193,6 +199,13 @@ class OpenoltServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def EnablePonIf(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetPonIf(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -310,6 +323,11 @@ def add_OpenoltServicer_to_server(servicer, server):
           servicer.EnablePonIf,
           request_deserializer=openolt__pb2.Interface.FromString,
           response_serializer=openolt__pb2.Empty.SerializeToString,
+      ),
+      'GetPonIf': grpc.unary_unary_rpc_method_handler(
+          servicer.GetPonIf,
+          request_deserializer=openolt__pb2.Interface.FromString,
+          response_serializer=openolt__pb2.IntfIndication.SerializeToString,
       ),
       'DisablePonIf': grpc.unary_unary_rpc_method_handler(
           servicer.DisablePonIf,

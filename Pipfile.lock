@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a31cd0cc93b67e1bf889936bdb4f837d815db5b238221b40b55ddc4baadd94e6"
+            "sha256": "586cb0cd3d588a2b54aabca31edf06626730bb50b04d88ac9657054304258109"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -211,6 +211,10 @@
             ],
             "index": "pypi",
             "version": "==3.8.0"
+        },
+        "pypon": {
+            "editable": true,
+            "path": "."
         },
         "requests": {
             "hashes": [
