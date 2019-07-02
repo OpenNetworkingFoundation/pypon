@@ -51,8 +51,11 @@ class InterfaceInfo(object):
 		self.get_status(intf_id)
 
 	def get_status(self, if_id):
-		status = self.stub.GetPonIf(openolt_pb2.Interface(intf_id=if_id))
-		print('Status is ' + status.oper_state)
+		try:
+			status = self.stub.GetPonIf(openolt_pb2.Interface(intf_id=if_id))
+			print('Status is ' + status.oper_state)
+		except Exception as err:
+			log.exception("Failed to retrieve interface status", e=err)
 
 if __name__ == '__main__':	
 	if len(sys.argv) < 3:
