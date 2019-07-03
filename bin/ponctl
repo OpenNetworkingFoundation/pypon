@@ -3,6 +3,8 @@
 from pypon import ind as i
 from pypon import device_info as d
 from pypon import interface_info as intf_info
+from pypon import onu_info as o
+
 import click
 
 
@@ -36,7 +38,14 @@ def ifinfo(olt_host_port, intf_id):
         given interface ID."""
     intf_info.InterfaceInfo(olt_host_port, intf_id).start()
 
-
+@main.command()
+@click.argument('olt_host_port')
+@click.argument('intf_id')
+@click.argument('onu_id')
+def onuinfo(olt_host_port, intf_id, onu_id):
+    """Get ONU info from OLT_HOST_PORT with given
+        interface and ONU ID."""
+    o.OnuInfo(olt_host_port, intf_id, onu_id).start()
 
 if __name__ == "__main__":
     main()

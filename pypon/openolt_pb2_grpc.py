@@ -39,6 +39,11 @@ class OpenoltStub(object):
         request_serializer=openolt__pb2.Onu.SerializeToString,
         response_deserializer=openolt__pb2.Empty.FromString,
         )
+    self.GetOnuInfo = channel.unary_unary(
+        '/openolt.Openolt/GetOnuInfo',
+        request_serializer=openolt__pb2.Onu.SerializeToString,
+        response_deserializer=openolt__pb2.OnuIndication.FromString,
+        )
     self.OmciMsgOut = channel.unary_unary(
         '/openolt.Openolt/OmciMsgOut',
         request_serializer=openolt__pb2.OmciMsg.SerializeToString,
@@ -149,6 +154,13 @@ class OpenoltServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def DeleteOnu(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetOnuInfo(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -287,6 +299,11 @@ def add_OpenoltServicer_to_server(servicer, server):
           servicer.DeleteOnu,
           request_deserializer=openolt__pb2.Onu.FromString,
           response_serializer=openolt__pb2.Empty.SerializeToString,
+      ),
+      'GetOnuInfo': grpc.unary_unary_rpc_method_handler(
+          servicer.GetOnuInfo,
+          request_deserializer=openolt__pb2.Onu.FromString,
+          response_serializer=openolt__pb2.OnuIndication.SerializeToString,
       ),
       'OmciMsgOut': grpc.unary_unary_rpc_method_handler(
           servicer.OmciMsgOut,

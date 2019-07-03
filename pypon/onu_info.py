@@ -20,50 +20,49 @@ import structlog
 import openolt_pb2_grpc
 import openolt_pb2
 
-log = structlog.get_logger()
+logger = structlog.get_logger()
 
-class InterfaceInfo(object):
-	def __init__(self, host_and_port, intf_id):
-		super(InterfaceInfo, self)
+class OnuInfo(object):
+	def __init__(self, host_and_port, intf_id, onu_id):
+		super(OnuInfo, self)
 		self.host_and_port = host_and_port
-		# self.intf_id = (int)(intf_id)
 
 		try:
-			self.process = Process(target=self.run, args=((int)(intf_id),))
-		except Exception as err:
-			log.exception("Failed to initialize interface", e=err)
-
+			self.process = Process(target=self.run, args=((int)(intf_id), (int)(onu_id),))
+		except Exception as e:
+			logger.exception("Failed to initialize ONU", e=e)
 
 	def start(self):
 		try:
 			self.process.start()
-		except Exception as err:
-			log.exception("Failed to start interface", e=err)
+		except Exception as e:
+			logger.exception("Failed to start ONU", e=e)
 
 		try:
 			self.process.join()
 		except KeyboardInterrupt:
 			self.process.terminate()
 
-	def run(self, intf_id):
+	def run(self, intf_id, onu_id):
 		channel = grpc.insecure_channel(self.host_and_port)
 		self.stub = openolt_pb2_grpc.OpenoltStub(channel)
-		self.get_status(intf_id)
+		self.get_status(intf_id, onu_id)
 
-	def get_status(self, if_id):
+	def get_status(self, if_id, onu_id):
 		try:
-			status = self.stub.GetPonIf(openolt_pb2.Interface(intf_id=if_id))
-			print('PON interface status is ' + status.oper_state)
-		except Exception as err:
-			log.exception("Failed to retrieve interface status", e=err)
+			status = self.stub.GetOnuInfo(openolt_pb2.Onu(intf_id=if_id, onu_id=onu_id))
+			print('ONU status is ' + status.oper_state)
+		except Exception as e:
+			logger.exception('Failed to retrieve ONU status', e=e)
 
-if __name__ == '__main__':	
-	if len(sys.argv) < 3:
-		# Print some kind of error
+if __name__ == "__main__":
+	if(len(sys.argv)<4):
+		print('Need all arguments to execute command')
 		sys.exit(1)
 
 	port_and_host = sys.argv[1]
 	if_id = sys.argv[2]
-	ifinfo = InterfaceInfo(port_and_host, if_id)
-	ifinfo.start()
+	onu_id = sys.argv[3]
 
+	OnuInfo(port_and_host, if_id, onu_id).start()
+		
