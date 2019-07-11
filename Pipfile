@@ -24,9 +24,6 @@ urllib3 = "*"
 grpcio-tools = "*"
 click = "*"
 pypon = {path = ".",editable = true}
-sphinx = "*"
-sphinx-rtd-theme = "*"
-bluepy = "*"
 
 [requires]
 python_version = "2.7"
