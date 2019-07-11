@@ -35,6 +35,9 @@ class InterfaceInfo(object):
 
 
 	def start(self):
+		"""Starts a new Python Process to query the PON port, and stops once the child process is over or 
+            the user interrupts with the keyboard."""
+
 		try:
 			self.process.start()
 		except Exception as err:
@@ -46,11 +49,15 @@ class InterfaceInfo(object):
 			self.process.terminate()
 
 	def run(self, intf_id):
+		"""Sets up the gRPC channel and stub for RPC calls, then calls the get_status function."""
+
 		channel = grpc.insecure_channel(self.host_and_port)
 		self.stub = openolt_pb2_grpc.OpenoltStub(channel)
 		self.get_status(intf_id)
 
 	def get_status(self, if_id):
+		"""Uses the PON interface ID provided to locate the desired PON port and 
+			retrieve its status ('up' or 'down')."""
 		try:
 			status = self.stub.GetPonIf(openolt_pb2.Interface(intf_id=if_id))
 			print('PON interface status is ' + status.oper_state)
@@ -58,8 +65,10 @@ class InterfaceInfo(object):
 			log.exception("Failed to retrieve interface status", e=err)
 
 if __name__ == '__main__':	
+	"""Allows the module to be run directly from the command line, as long as all arguments are provided."""
+
 	if len(sys.argv) < 3:
-		# Print some kind of error
+		print('Need all arguments to execute command')
 		sys.exit(1)
 
 	port_and_host = sys.argv[1]

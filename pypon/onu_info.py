@@ -33,6 +33,8 @@ class OnuInfo(object):
 			logger.exception("Failed to initialize ONU", e=e)
 
 	def start(self):
+		"""Starts a new Python Process to query the ONU, stops once the child process is over or 
+			the user interrupts with the keyboard."""
 		try:
 			self.process.start()
 		except Exception as e:
@@ -44,11 +46,15 @@ class OnuInfo(object):
 			self.process.terminate()
 
 	def run(self, intf_id, onu_id):
+		"""Sets up the gRPC channel and stub for RPC calls, then calls the get_status function."""
+
 		channel = grpc.insecure_channel(self.host_and_port)
 		self.stub = openolt_pb2_grpc.OpenoltStub(channel)
 		self.get_status(intf_id, onu_id)
 
 	def get_status(self, if_id, onu_id):
+		"""Uses PON interface ID and ONU ID provided to locate the desired ONU and 
+			retrieve its status ('up' or 'down')."""
 		try:
 			status = self.stub.GetOnuInfo(openolt_pb2.Onu(intf_id=if_id, onu_id=onu_id))
 			print('ONU status is ' + status.oper_state)
@@ -56,6 +62,8 @@ class OnuInfo(object):
 			logger.exception('Failed to retrieve ONU status', e=e)
 
 if __name__ == "__main__":
+	"""Allows the module to be run directly from the command line, as long as all arguments are provided."""
+
 	if(len(sys.argv)<4):
 		print('Need all arguments to execute command')
 		sys.exit(1)

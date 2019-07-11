@@ -40,6 +40,8 @@ class DeviceInfo(object):
             log.exception('Olt initialization failed', e=e)
 
     def start(self):
+        """Starts a new Python Process to query the OLT, stops once the child process is over or 
+            the user interrupts with the keyboard."""
         try:
             self.process.start()
         except Exception as e:
@@ -51,12 +53,17 @@ class DeviceInfo(object):
             self.process.terminate()
 
     def main(self, host_and_port):
+        """Sets up the gRPC channel and stub for RPC calls, then calls the get_device_info function."""
+        
         channel = grpc.insecure_channel(self.host_and_port)
         self.stub = openolt_pb2_grpc.OpenoltStub(channel)
 
         self.get_device_info()  # block
 
     def get_device_info(self):
+        """Initiates RPC call to the stub to print the OLT info. If the first attempt fails, the function 
+            makes repeated attempts to connect with BBSim until the timeout limit is exceeded."""
+
         # timeout = 60*60
         timeout = 10
         delay = 1
@@ -83,6 +90,7 @@ class DeviceInfo(object):
 
 
 if __name__ == '__main__':
+    """Allows the module to be run directly from the command line, as long as all arguments are provided."""
 
     if len(sys.argv) < 2:
         sys.stderr.write(
